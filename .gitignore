@@ -18,3 +18,10 @@ node_modules/
 
 # Local 폴더 제외
 Local/
+*.mp3
+*.xlsx
+*.xlsm
+*edgex.xlsx
+*edgex.mp3
+EdgeX-PC*
+EdgeX_PC*
