@@ -1,0 +1,147 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "EdgeX는 분산형 AI 인프라를 구축하는 Web3 기반의 엣지 컴퓨팅 프로젝트입니다. PC방을 위한 도입 제안서입니다." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="keywords" content="EdgeX, Web3, 엣지 컴퓨팅, AI 인프라, PC방, 분산형">
+  <title>{title}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+</head>
+<body>
+  <slot />
+  
+  <!-- 모바일 하단 네비게이션 -->
+  <nav class="bottom-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#intro" class="nav-link active">
+          <i class="fas fa-info-circle"></i>
+          <span>소개</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#benefits" class="nav-link">
+          <i class="fas fa-chart-line"></i>
+          <span>효과</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#infra" class="nav-link">
+          <i class="fas fa-server"></i>
+          <span>인프라</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#rewards" class="nav-link">
+          <i class="fas fa-coins"></i>
+          <span>보상</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  
+  <script>
+    // 스크롤 시 섹션 애니메이션
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      
+      // 초기 로드 시 화면에 보이는 섹션들 표시
+      sections.forEach(section => {
+        if (isElementInViewport(section)) {
+          section.classList.add('animate-on-scroll');
+        }
+      });
+      
+      // 스크롤 이벤트
+      window.addEventListener('scroll', function() {
+        sections.forEach(section => {
+          if (isElementInViewport(section) && !section.classList.contains('animate-on-scroll')) {
+            section.classList.add('animate-on-scroll');
+          }
+        });
+        
+        // 모바일 네비게이션 활성화 상태 업데이트
+        updateActiveNavLink();
+      });
+      
+      // 모바일 네비게이션 링크 클릭 이벤트
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // 첫 로드시 활성화 상태 설정
+      updateActiveNavLink();
+    });
+    
+    // 요소가 뷰포트에 있는지 확인하는 함수
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+      );
+    }
+    
+    // 현재 보이는 섹션에 따라 네비게이션 활성화 상태 업데이트
+    function updateActiveNavLink() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSectionId = '';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+          currentSectionId = section.id;
+        }
+      });
+      
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
+
+<style is:global>
+  /* CSS 가져오기 문은 다른 모든 CSS 규칙보다 먼저 와야 합니다 */
+  @import "../styles/global.css";
+  
+  /* 기본 스타일 */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,78 @@
+/* 흐름도 스타일 */
+.flow-container {
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.flow-chart {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
+
+.flow-node {
+  fill: var(--dark-surface);
+  stroke: var(--primary);
+  stroke-width: 2px;
+}
+
+.flow-node-accent {
+  fill: rgba(0, 85, 255, 0.15);
+  stroke: var(--primary);
+  stroke-width: 2px;
+}
+
+.flow-text {
+  font-size: 16px;
+  text-anchor: middle;
+  font-family: 'Noto Sans KR', sans-serif;
+  fill: var(--white);
+  font-weight: 500;
+}
+
+.flow-line {
+  stroke: var(--secondary);
+  stroke-width: 2px;
+  fill: none;
+  marker-end: url(#arrow);
+}
+
+/* 비교 컨테이너 */
+.vs-container {
+  display: flex;
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.vs-box {
+  flex: 1;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-dark);
+  background: var(--dark-surface);
+}
+
+.vs-box.left {
+  border-left: 5px solid var(--gray-dark);
+}
+
+.vs-box.right {
+  border-left: 5px solid var(--primary);
+  background: linear-gradient(145deg, var(--dark-surface), rgba(0, 85, 255, 0.1));
+}
+
+.vs-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-accent);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .vs-container {
+    flex-direction: column;
+  }
+}

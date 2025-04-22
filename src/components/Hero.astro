@@ -1,0 +1,163 @@
+---
+import Button from './Button.astro';
+import IntroIcon from './icons/IntroIcon.astro';
+import RewardIcon from './icons/RewardIcon.astro';
+import { getImage } from 'astro:assets';
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">EdgeX PC방 Project</h1>
+      <p class="hero-subtitle">분산형 AI 인프라 구축을 위한 Web3 기반 엣지 컴퓨팅 솔루션</p>
+      <div class="hero-cta">
+        <Button href="#benefits" variant="primary">
+          <span slot="icon">
+            <IntroIcon width="20" height="20" fill="white" />
+          </span>
+          도입 효과 보기
+        </Button>
+        <Button href="#rewards" variant="secondary">
+          <span slot="icon">
+            <RewardIcon width="20" height="20" fill="var(--secondary)" />
+          </span>
+          보상 구조 확인
+        </Button>
+      </div>
+    </div>
+    
+    <div class="hero-particles">
+      <!-- 배경 그래픽 요소 -->
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--dark-bg), var(--dark-surface));
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%230055ff" fill-opacity="0.07" d="M0,100 C40,20 60,180 100,100 C140,20 160,180 200,100 L200,0 L0,0 Z"></path></svg>');
+    background-size: cover;
+    opacity: 0.6;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, var(--white), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  
+  .p1 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--secondary), transparent 70%);
+    top: -120px;
+    right: 10%;
+    animation: float 20s ease-in-out infinite;
+  }
+  
+  .p2 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, var(--primary), transparent 70%);
+    bottom: 10%;
+    right: 20%;
+    animation: float 15s ease-in-out infinite reverse;
+  }
+  
+  .p3 {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, var(--pink), transparent 70%);
+    top: 30%;
+    left: 10%;
+    animation: float 18s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(12px, 18px);
+    }
+    50% {
+      transform: translate(24px, 0);
+    }
+    75% {
+      transform: translate(6px, -18px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 70vh;
+      padding: 4rem 0;
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+    }
+    
+    .hero-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

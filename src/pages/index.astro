@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import IntroSection from '../components/IntroSection.astro';
+import BenefitsSection from '../components/BenefitsSection.astro';
+import InfraSection from '../components/InfraSection.astro';
+import ExpectationsSection from '../components/ExpectationsSection.astro';
+import RewardsSection from '../components/RewardsSection.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="EdgeX PC방 제안서">
+  <Header />
+  <Hero />
+  
+  <IntroSection />
+  <BenefitsSection />
+  <InfraSection />
+  <ExpectationsSection />
+  <RewardsSection />
+  
+  <Footer />
+</MainLayout>

@@ -1,0 +1,235 @@
+---
+---
+<header>
+  <div class="container flex-sb">
+    <div class="logo">
+      <a href="#" class="logo-wrapper">
+        <span class="logo-text">EdgeX</span>
+        <img src="/image/EdgeX-logo.png" alt="EdgeX Logo" class="logo-image">
+        <span class="logo-badge">피씨방</span>
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#intro" class="nav-link">소개</a></li>
+        <li><a href="#benefits" class="nav-link">도입 효과</a></li>
+        <li><a href="#infra" class="nav-link">인프라 분석</a></li>
+        <li><a href="#expectations" class="nav-link">기대 효과</a></li>
+        <li><a href="#rewards" class="nav-link">보상 구조</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-toggle" aria-label="메뉴 열기">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<style>
+  header {
+    padding: 1.5rem 0; /* 1.5배 증가 */
+  }
+  
+  .flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* 로고 요소들 사이 간격 */
+    text-decoration: none;
+  }
+  
+  .logo-image {
+    height: 3.5rem; /* 로고 이미지 높이 설정 */
+    width: auto;
+  }
+  
+  .logo-text {
+    font-size: 3rem; /* 1.5배 증가 (기존 2rem) */
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--white), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.75px; /* 1.5배 증가 */
+  }
+  
+  .logo-badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.3rem 0.75rem; /* 1.5배 증가 */
+    border-radius: 6px; /* 1.5배 증가 */
+    font-size: 1.35rem; /* 1.5배 증가 (기존 0.9rem) */
+    font-weight: 700;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem; /* 1.5배 증가 */
+  }
+  
+  .nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.65rem; /* 1.5배 증가 (기존 1.1rem) */
+    transition: var(--transition-fast);
+    position: relative;
+    padding: 0.75rem 0; /* 1.5배 증가 */
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px; /* 1.5배 증가 */
+    background: var(--primary);
+    transition: var(--transition-fast);
+  }
+  
+  .nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 2.25rem; /* 1.5배 증가 */
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+    
+    .mobile-menu-toggle {
+      display: block;
+    }
+    
+    .logo-image {
+      height: 3rem; /* 모바일에서 약간 작게 */
+    }
+    
+    .logo-text {
+      font-size: 2.4rem; /* 모바일에서 약간 작게 */
+    }
+    
+    .logo-badge {
+      font-size: 1.2rem; /* 모바일에서 약간 작게 */
+      padding: 0.25rem 0.6rem;
+    }
+    
+    /* 모바일에서 네비게이션이 활성화되었을 때 스타일 */
+    .main-nav.active {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--dark-surface);
+      padding: 1.5rem; /* 1.5배 증가 */
+      box-shadow: var(--shadow-dark);
+      z-index: 1000;
+    }
+    
+    .main-nav.active ul {
+      flex-direction: column;
+      gap: 1.5rem; /* 1.5배 증가 */
+    }
+    
+    .main-nav.active .nav-link {
+      font-size: 1.8rem; /* 1.5배 증가 (기존 1.2rem) */
+      display: block;
+      padding: 1.2rem 0; /* 1.5배 증가 */
+    }
+  }
+</style>
+
+<script>
+  // 스크롤에 따른 헤더 스타일 변경
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // 스크롤 이벤트
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 75) { // 1.5배 증가 (기존 50)
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // 현재 보이는 섹션에 따라 네비게이션 링크 활성화
+      updateActiveNavLink();
+    });
+    
+    // 네비게이션 링크 클릭 이벤트
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
+    // 모바일 메뉴 토글 이벤트
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.main-nav');
+    
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', function() {
+        mobileNav.classList.toggle('active');
+        this.classList.toggle('active');
+        
+        if (this.classList.contains('active')) {
+          this.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+          this.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+    }
+    
+    // 첫 로드 시 활성화 상태 설정
+    updateActiveNavLink();
+  });
+  
+  // 현재 보이는 섹션에 따라 네비게이션 활성화 상태 업데이트
+  function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let currentSectionId = '';
+    
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+        currentSectionId = section.id;
+      }
+    });
+    
+    if (currentSectionId) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  }
+</script>

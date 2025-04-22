@@ -1,0 +1,184 @@
+---
+---
+<section id="intro" class="intro-section">
+  <div class="container">
+    <h2 class="edge-title">EdgeX 소개</h2>
+    
+    <div class="highlight-box">
+      <p>EdgeX는 분산형 AI 인프라를 구축하는 Web3 기반의 엣지 컴퓨팅 프로젝트입니다.</p>
+    </div>
+    
+    <div class="intro-grid">
+      <div class="intro-card">
+        <div class="intro-card-header">
+          <div class="intro-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>해결 과제</h3>
+        </div>
+        <p>클라우드 중심 AI 모델은 성능과 비용, 프라이버시 측면에서 한계를 가지고 있습니다. EdgeX는 이러한 문제를 엣지 컴퓨팅을 통해 해결하고, 분산형 AI 인프라를 구축합니다.</p>
+      </div>
+      
+      <div class="intro-card">
+        <div class="intro-card-header">
+          <div class="intro-icon blue-dot">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h3>구성 요소</h3>
+        </div>
+        <ul>
+          <li><strong>XR7</strong>: 엣지 디바이스에서 AI 작업을 처리하는 경량화된 추론 엔진</li>
+          <li><strong>EdgeX OS</strong>: 분산 네트워크 연결과 보상 시스템을 관리하는 운영 체제</li>
+          <li><strong>분산 네트워크</strong>: 복잡한 AI 작업을 여러 노드에 분산하여 처리하는 네트워크 구조</li>
+        </ul>
+      </div>
+      
+      <div class="intro-card">
+        <div class="intro-card-header">
+          <div class="intro-icon pink-dot">
+            <i class="fas fa-coins"></i>
+          </div>
+          <h3>$EX 토큰 보상 구조</h3>
+        </div>
+        <p>EdgeX 네트워크에 참여하는 노드는 AI 서비스 제공에 기여한 만큼 $EX 토큰을 보상으로 받습니다. 이는 네트워크 참여자들에게 지속적인 동기부여와 경제적 이익을 제공합니다.</p>
+        <div class="token-info">
+          <div class="token-stats">
+            <div class="token-stat">
+              <span class="stat-label">노드 참여 보상</span>
+              <span class="stat-value">40%</span>
+            </div>
+            <div class="token-stat">
+              <span class="stat-label">서비스 지원</span>
+              <span class="stat-value">35%</span>
+            </div>
+            <div class="token-stat">
+              <span class="stat-label">생태계 확장</span>
+              <span class="stat-value">25%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro-section {
+    background: var(--dark-bg);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+  
+  .intro-card {
+    background: linear-gradient(145deg, var(--dark-surface), rgba(0, 85, 255, 0.05));
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-dark);
+    transition: var(--transition-normal);
+    height: 100%;
+    border-left: 4px solid var(--primary);
+  }
+  
+  .intro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-light);
+  }
+  
+  .intro-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .intro-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 85, 255, 0.15);
+    color: var(--primary);
+    font-size: 1.5rem;
+  }
+  
+  .intro-icon.blue-dot {
+    background: rgba(0, 178, 255, 0.15);
+    color: var(--secondary);
+  }
+  
+  .intro-icon.pink-dot {
+    background: rgba(255, 91, 172, 0.15);
+    color: var(--pink);
+  }
+  
+  .intro-card h3 {
+    color: var(--text-accent);
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  
+  .intro-card ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .intro-card li {
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+  }
+  
+  .token-info {
+    margin-top: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1.2rem;
+  }
+  
+  .token-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .token-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pink);
+  }
+  
+  @media (max-width: 768px) {
+    .intro-card {
+      padding: 1.5rem;
+    }
+    
+    .token-stats {
+      grid-template-columns: 1fr;
+    }
+    
+    .token-stat {
+      padding: 0.8rem 0;
+    }
+  }
+</style>

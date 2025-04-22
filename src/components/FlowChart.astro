@@ -1,0 +1,24 @@
+---
+interface Props {
+  viewBox?: string;
+  className?: string;
+}
+
+const { viewBox = "0 0 800 140", className = "" } = Astro.props;
+---
+
+<div class="flow-container">
+  <svg class={`flow-chart ${className}`} viewBox={viewBox}>
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 Z" fill="#00AAFF" />
+      </marker>
+    </defs>
+    
+    <slot />
+  </svg>
+</div>
+
+<style>
+  @import "../styles/flow.css";
+</style>
