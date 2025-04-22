@@ -1,0 +1,350 @@
+:root {
+  /* 기본 색상 */
+  --primary: #0055ff;
+  --secondary: #00b2ff;
+  --accent: #0036a3;
+  --pink: #ff5bac;
+  --green: #00de9a;
+  --dark-bg: #050a1f;
+  --dark-surface: #0c1631;
+  --gray-light: #e0f0ff;
+  --gray-dark: #242b42;
+  --white: #FFFFFF;
+  
+  /* 텍스트 색상 */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-accent: #00b2ff;
+  
+  /* 그림자 */
+  --shadow-light: 0 4px 15px rgba(0, 85, 255, 0.15);
+  --shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.25);
+  
+  /* 트랜지션 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  
+  /* 타이포그래피 크기 - 1.5배 증가 */
+  --h1-size: 5.25rem;     /* 84px (기존 3.5rem의 1.5배) */
+  --h2-size: 4.05rem;     /* 64.8px (기존 2.7rem의 1.5배) */
+  --h3-size: 2.25rem;     /* 36px (기존 1.5rem의 1.5배) */
+  --body-size: 1.5rem;    /* 24px (기존 1rem의 1.5배) */
+  --small-size: 1.3rem;   /* 21px (기존 0.875rem의 1.5배) */
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--dark-bg);
+  font-size: var(--body-size); /* 기본 폰트 크기 설정 */
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px; /* 최대 가로폭 설정 */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 타이포그래피 */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+
+p {
+  margin-bottom: 1rem;
+  font-size: var(--body-size); /* 기본 텍스트 크기 1.5배 증가 */
+}
+
+.edge-title {
+  font-size: var(--h2-size);
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.edge-title::before {
+  content: "";
+  display: inline-block;
+  width: 12px; /* 두께 증가 */
+  height: 4.05rem; /* 높이도 비례해서 증가 */
+  background-color: var(--primary);
+  margin-right: 1.2rem; /* 간격도 증가 */
+  border-radius: 3px; /* 테두리 반경도 증가 */
+}
+
+.section-subtitle {
+  font-size: var(--h3-size);
+  color: var(--text-accent);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* 레이아웃 섹션 */
+section {
+  padding: 6rem 0; /* 여백도 증가 */
+  position: relative;
+  overflow: hidden;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(to right, var(--dark-bg), var(--dark-surface));
+  padding: 1.5rem 0; /* 여백 증가 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 바텀 네비게이션 - 모바일 전용 */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--dark-surface);
+  z-index: 1000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 0; /* 여백 증가 */
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0.75rem 0; /* 여백 증가 */
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem; /* 여백 증가 */
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 1.35rem; /* 1.5배 증가 */
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link i {
+  font-size: 2.1rem; /* 1.5배 증가 */
+  margin-bottom: 0.375rem; /* 여백 증가 */
+}
+
+/* 히어로 섹션 */
+.hero {
+  background: linear-gradient(135deg, var(--dark-bg), var(--dark-surface));
+  height: 80vh;
+  min-height: 600px; /* 높이 증가 */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%230055ff" fill-opacity="0.1" d="M0,100 C40,20 60,180 100,100 C140,20 160,180 200,100 L200,0 L0,0 Z"></path></svg>');
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: var(--h1-size);
+  margin-bottom: 1.5rem; /* 여백 증가 */
+  background: linear-gradient(90deg, var(--white), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 2.4rem; /* 1.5배 증가 */
+  margin-bottom: 3rem; /* 여백 증가 */
+  color: var(--text-secondary);
+}
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 4.5rem 0; /* 여백 증가 */
+  background: var(--dark-surface);
+  color: var(--text-secondary);
+  margin-top: 4.5rem; /* 여백 증가 */
+}
+
+footer a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  font-size: 1.575rem; /* 1.5배 증가 */
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+
+/* 유틸리티 클래스 */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-1 {
+  gap: 1.5rem; /* 증가 */
+}
+
+.gap-2 {
+  gap: 3rem; /* 증가 */
+}
+
+.mt-1 {
+  margin-top: 1.5rem; /* 증가 */
+}
+
+.mt-2 {
+  margin-top: 3rem; /* 증가 */
+}
+
+.mt-3 {
+  margin-top: 4.5rem; /* 증가 */
+}
+
+.mb-1 {
+  margin-bottom: 1.5rem; /* 증가 */
+}
+
+.mb-2 {
+  margin-bottom: 3rem; /* 증가 */
+}
+
+.mb-3 {
+  margin-bottom: 4.5rem; /* 증가 */
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* 증가 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 2.25rem; /* 증가 */
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --h1-size: 4.5rem;   /* 72px */
+    --h2-size: 3.6rem;   /* 57.6px */
+    --h3-size: 1.95rem;  /* 31.2px */
+    --body-size: 1.35rem; /* 21.6px */
+  }
+  
+  .edge-title::before {
+    height: 3.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem; /* 증가 */
+  }
+  
+  :root {
+    --h1-size: 3.75rem;  /* 60px */
+    --h2-size: 3.15rem;  /* 50.4px */
+    --h3-size: 1.8rem;   /* 28.8px */
+    --body-size: 1.2rem; /* 19.2px */
+  }
+  
+  section {
+    padding: 4.5rem 0; /* 증가 */
+  }
+  
+  .hero {
+    height: auto;
+    padding: 9rem 0; /* 증가 */
+  }
+  
+  .edge-title::before {
+    height: 3.15rem;
+  }
+  
+  .bottom-nav {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --h1-size: 3.3rem;   /* 52.8px */
+    --h2-size: 2.7rem;   /* 43.2px */
+    --h3-size: 1.65rem;  /* 26.4px */
+    --body-size: 1.125rem; /* 18px */
+  }
+  
+  .edge-title::before {
+    height: 2.7rem;
+    width: 9px; /* 증가 */
+  }
+}

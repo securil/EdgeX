@@ -1,0 +1,67 @@
+/* 카드와 그리드 스타일 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+.card {
+  background: linear-gradient(145deg, var(--dark-surface), var(--gray-dark));
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-dark);
+  transition: var(--transition-normal);
+  border-left: 4px solid var(--primary);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-accent);
+}
+
+.highlight-box {
+  background: rgba(0, 85, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--primary);
+}
+
+.highlight-box p {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* 혜택 카드 */
+.benefit-card {
+  background: linear-gradient(to right, rgba(0, 85, 255, 0.15), var(--dark-surface));
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--secondary);
+  transition: var(--transition-normal);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-title {
+  font-weight: bold;
+  color: var(--text-accent);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,171 @@
+---
+---
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="logo-wrapper">
+          <span class="logo-text">EdgeX</span>
+        </div>
+        <p class="tagline">분산형 AI 인프라를 구축하는 Web3 기반 엣지 컴퓨팅 솔루션</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-section">
+          <h4>프로젝트 정보</h4>
+          <ul>
+            <li><a href="#intro">EdgeX 소개</a></li>
+            <li><a href="#benefits">도입 효과</a></li>
+            <li><a href="#rewards">보상 구조</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>소셜 미디어</h4>
+          <div class="social-icons">
+            <a href="https://github.com/yourusername/EdgeX" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="Discord">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 EdgeX Project. 모든 권리 보유.</p>
+      <p>문의: <a href="mailto:info@edgex.io">info@edgex.io</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--dark-surface);
+    color: var(--text-secondary);
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-logo {
+    max-width: 300px;
+  }
+  
+  .logo-wrapper {
+    margin-bottom: 1rem;
+  }
+  
+  .logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+  }
+  
+  .footer-section h4 {
+    color: var(--text-primary);
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-section ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--primary);
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1.2rem;
+  }
+  
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-dark);
+    border-radius: 50%;
+    color: var(--text-primary);
+    transition: var(--transition-fast);
+  }
+  
+  .social-icons a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+  }
+  
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-bottom a {
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .footer-logo {
+      max-width: 100%;
+      text-align: center;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .social-icons {
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  step: string;
+  accentColor?: boolean;
+}
+
+const { title, description, icon, step, accentColor = false } = Astro.props;
+---
+
+<div class={`workflow-card ${accentColor ? 'accent' : ''}`}>
+  <div class="step-number">{step}</div>
+  <div class="card-content">
+    <div class="card-icon">
+      <i class={icon}></i>
+    </div>
+    <div class="card-text">
+      <h4 class="card-title">{title}</h4>
+      <p class="card-description">{description}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .workflow-card {
+    background: var(--dark-surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .workflow-card.accent {
+    background: linear-gradient(145deg, var(--dark-surface), rgba(0, 85, 255, 0.1));
+    border-left: 3px solid var(--primary);
+  }
+  
+  .workflow-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .step-number {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 85, 255, 0.2);
+    color: var(--primary);
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+  
+  .card-content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    z-index: 1;
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: rgba(0, 85, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--primary);
+  }
+  
+  .workflow-card.accent .card-icon {
+    background: rgba(0, 85, 255, 0.2);
+  }
+  
+  .card-text {
+    flex: 1;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .workflow-card {
+      padding: 1.2rem;
+    }
+    
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      font-size: 1.2rem;
+    }
+  }
+</style>
