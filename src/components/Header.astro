@@ -1,11 +1,12 @@
 ---
+import { getImage } from '../layouts/MainLayout.astro';
 ---
 <header>
   <div class="container flex-sb">
     <div class="logo">
       <a href="#" class="logo-wrapper">
         <span class="logo-text">EdgeX</span>
-        <img src="/image/EdgeX-logo.png" alt="EdgeX Logo" class="logo-image">
+        <img src={getImage('/image/EdgeX-logo.png')} alt="EdgeX Logo" class="logo-image">
         <span class="logo-badge">피씨방</span>
       </a>
     </div>
