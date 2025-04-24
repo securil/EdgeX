@@ -1,0 +1,196 @@
+---
+import ProcessComparison from './ProcessComparison.astro';
+---
+
+<section id="workflow-comparison" class="workflow-comparison-section">
+  <div class="container">
+    <h2 class="edge-title">EdgeX의 LLM 서비스 효과</h2>
+    
+    <div class="explanation-box">
+      <p>EdgeX는 기존 LLM 서비스의 한계를 넘어 더 빠르고, 안전하며, 효율적인 AI 처리를 제공합니다. 다음 두 가지 시나리오를 통해 EdgeX가 어떻게 AI 서비스 경험을 혁신하는지 살펴보세요.</p>
+    </div>
+    
+    <!-- 단순 질문 시나리오 -->
+    <div class="scenario-box">
+      <h3 class="scenario-title">시나리오 1: "서울 날씨 알려줄래?"</h3>
+      <p class="scenario-description">날씨와 같은 단순한 정보 요청은 EdgeX가 로컬에서 직접 처리하여 응답 시간을 크게 단축합니다.</p>
+      
+      <ProcessComparison
+        traditional={[
+          { time: "0.0초", description: "사용자 질문 입력" },
+          { time: "0.5초", description: "중앙 서버로 전송 (네트워크 지연)" },
+          { time: "1.0초", description: "서버에서 질문 처리" },
+          { time: "1.5초", description: "API 호출 및 데이터 수집" },
+          { time: "2.0초", description: "응답 생성" },
+          { time: "2.5초", description: "사용자에게 응답 전송" }
+        ]}
+        edgex={[
+          { time: "0.0초", description: "사용자 질문 입력" },
+          { time: "0.1초", description: "EdgeX 노드에서 질문 분석" },
+          { time: "0.2초", description: "단순 질문으로 판단 → 로컬 처리" },
+          { time: "0.4초", description: "API 호출 및 응답 즉시 제공" }
+        ]}
+        metrics={[
+          { name: "총 응답 시간", traditional: "2.5초", edgex: "0.5초", improvement: "80% 단축" },
+          { name: "서버 부하", traditional: "100%", edgex: "0%", improvement: "완전 제거" },
+          { name: "개인정보 보호", traditional: "낮음", edgex: "높음", improvement: "로컬 처리로 보호" }
+        ]}
+      />
+    </div>
+    
+    <!-- 복합 질문 시나리오 -->
+    <div class="scenario-box">
+      <h3 class="scenario-title">시나리오 2: "서울과 도쿄 날씨를 비교하고 어디로 여행가는게 좋을지 알려줄래?"</h3>
+      <p class="scenario-description">복합적인 질문에서도 EdgeX는 처리를 최적화하여 효율성을 높입니다.</p>
+      
+      <ProcessComparison
+        traditional={[
+          { time: "0.0초", description: "사용자 질문 입력" },
+          { time: "0.5초", description: "중앙 서버로 전송 (네트워크 지연)" },
+          { time: "1.0초", description: "서버에서 질문 처리" },
+          { time: "2.0초", description: "여러 API 호출 (서울/도쿄 날씨, 여행 데이터)" },
+          { time: "4.0초", description: "데이터 종합 및 LLM 입력" },
+          { time: "5.0초", description: "복합 응답 생성" },
+          { time: "5.5초", description: "사용자에게 응답 전송" }
+        ]}
+        edgex={[
+          { time: "0.0초", description: "사용자 질문 입력" },
+          { time: "0.1초", description: "EdgeX 노드에서 질문 분석" },
+          { time: "0.2초", description: "복합 질문으로 판단 → 작업 분리" },
+          { time: "0.5초", description: "날씨 데이터 로컬에서 수집" },
+          { time: "1.0초", description: "여행 추천 부분만 LLM에 요청" },
+          { time: "2.5초", description: "취합된 데이터로 응답 생성" }
+        ]}
+        metrics={[
+          { name: "총 응답 시간", traditional: "5.5초", edgex: "2.5초", improvement: "55% 단축" },
+          { name: "서버 부하", traditional: "100%", edgex: "30%", improvement: "70% 감소" },
+          { name: "개인정보 보호", traditional: "낮음", edgex: "중간", improvement: "필수 데이터만 전송" }
+        ]}
+      />
+    </div>
+    
+    <div class="conclusion-box">
+      <h3>EdgeX의 차별화된 가치</h3>
+      <div class="value-grid">
+        <div class="value-item">
+          <div class="value-icon"><i class="fas fa-bolt"></i></div>
+          <div class="value-title">속도 향상</div>
+          <div class="value-description">단순 질문은 최대 80%, 복합 질문은 최대 55%까지 응답 시간 단축</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="value-title">개인정보 보호</div>
+          <div class="value-description">필요한 데이터만 선택적으로 전송하여 프라이버시 강화</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><i class="fas fa-server"></i></div>
+          <div class="value-title">서버 비용 절감</div>
+          <div class="value-description">중앙 서버 부하 감소로 운영 비용 최소화</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .workflow-comparison-section {
+    background: var(--dark-bg);
+    padding: 5rem 0;
+    position: relative;
+  }
+  
+  .explanation-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .explanation-box p {
+    color: #1a1a2e;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .scenario-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .scenario-title {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .scenario-description {
+    color: #4a4e69;
+    margin-bottom: 2rem;
+  }
+  
+  .conclusion-box {
+    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .conclusion-box h3 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .value-item {
+    text-align: center;
+  }
+  
+  .value-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 85, 255, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+  }
+  
+  .value-title {
+    color: #1a1a2e;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .value-description {
+    color: #4a4e69;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .value-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .edge-title {
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: var(--h2-size);
+  }
+</style>

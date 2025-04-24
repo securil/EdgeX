@@ -1,0 +1,918 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<MainLayout title="EdgeX XR7 수익 계산기">
+  <Header />
+  
+  <section class="calculator-section">
+    <div class="container">
+      <div class="calculator-header">
+        <h1 class="calculator-title">EdgeX XR7 수익 구조 상세</h1>
+        <a href={import.meta.env.BASE_URL + "/"} class="back-button">← 홈으로 돌아가기</a>
+      </div>
+      
+      <div class="calculator-content">
+        <div class="intro-box">
+          <h2 class="intro-title">EdgeX XR7 수익 구조 및 운영 개념</h2>
+          <p class="intro-note">※ 본 문서의 수익 시뮬레이션 및 포인트 환산은 다음 가정을 기반으로 합니다:</p>
+          <ul class="intro-list">
+            <li>현재 시세 기준 <strong>기기 1대당 월 채굴 수익이 약 150,000원 수준</strong>입니다.</li>
+            <li>포인트 시세는 <strong>1포인트 ≒ 2.67원</strong>으로 추정됩니다.</li>
+            <li>헌팅 빈도에 따라 수익이 크게 달라질 수 있습니다.</li>
+          </ul>
+          <p class="disclaimer">이 수치는 실제 시장 상황이나 코인 상장 시점에 따라 변동될 수 있으며, 이해를 돕기 위한 추정치입니다.</p>
+        </div>
+        
+        <h2 class="section-title">EdgeX 채굴 방식의 구분</h2>
+        <div class="mining-types">
+          <div class="mining-type-card">
+            <h3>1. PoS (Proof of Stake) 기반 채굴</h3>
+            <p><strong>정의</strong>: 기기가 네트워크에 연결되어 있고 EdgeX OS가 정상 작동 중일 때 발생하는 기본 채굴</p>
+            <p><strong>발생 조건</strong>: 기기 전원 ON + 네트워크 연결 + EdgeX OS 실행</p>
+            <p><strong>수익 증가 요소</strong>: Earn Days 누적, 네트워크 품질(싸인포인트) 향상, Boost Mode 설정</p>
+          </div>
+          
+          <div class="mining-type-card">
+            <h3>2. PoW (Proof of Work) 기반 채굴</h3>
+            <p><strong>정의</strong>: QR 코드 스캔(헌팅)을 통한 AI 작업 처리 시 발생하는 채굴</p>
+            <p><strong>발생 조건</strong>: 헌터(사용자)가 기기의 QR 코드를 스캔하여 AI 작업 발생 시</p>
+            <p><strong>수익 증가 요소</strong>: 일일 헌팅 횟수 증가, 사용자 참여도 증가</p>
+          </div>
+        </div>
+        
+        <h2 class="section-title">용어 정의</h2>
+        <div class="table-wrapper">
+          <table class="terms-table">
+            <thead>
+              <tr>
+                <th>용어</th>
+                <th>정의</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>EdgeX XR7</strong></td>
+                <td>EdgeX 생태계의 AI 듀얼 게이트웨이 채굴 디바이스</td>
+              </tr>
+              <tr>
+                <td><strong>헌트(Hunt)</strong></td>
+                <td>PC방 손님 등 사용자가 앱으로 XR7의 QR코드를 스캔하는 행위</td>
+              </tr>
+              <tr>
+                <td><strong>헌터(Hunter)</strong></td>
+                <td>QR 코드를 스캔한 사용자 (보통 PC방 이용자)</td>
+              </tr>
+              <tr>
+                <td><strong>마이너(Miner)</strong></td>
+                <td>XR7 기기를 보유한 사람 (기본적으로 고객)</td>
+              </tr>
+              <tr>
+                <td><strong>관리점주</strong></td>
+                <td>XR7을 설치하고 QR 헌트를 유도하며 운영을 대행하는 PC방 점주</td>
+              </tr>
+              <tr>
+                <td><strong>포인트(Points)</strong></td>
+                <td>헌트나 채굴로 발생하는 앱 내 보상 단위. ROM 또는 EdgeX 코인으로 전환 가능</td>
+              </tr>
+              <tr>
+                <td><strong>Earn Days</strong></td>
+                <td>XR7 기기가 정상적으로 온라인 상태로 가동된 일수</td>
+              </tr>
+              <tr>
+                <td><strong>Lifetime Points</strong></td>
+                <td>기기가 누적해서 획득한 총 포인트 수치 (채굴 포함)</td>
+              </tr>
+              <tr>
+                <td><strong>Sign Point (싸인포인트)</strong></td>
+                <td>네트워크 품질, 활동량 등을 바탕으로 채굴량을 가중시키는 평가 지표</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <h2 class="section-title">기기 1대 기준 채굴량 및 수익 구조</h2>
+        <div class="mining-revenue-box">
+          <div class="mining-revenue-section">
+            <h3>1. PoS 채굴 (기본 채굴)</h3>
+            <ul>
+              <li><strong>전체 채굴량(100%)</strong>: 약 150,000원/월/대</li>
+              <li><strong>수익 분배</strong>:
+                <ul>
+                  <li><strong>PC방 점주 몫(2%)</strong>: 3,000원/월/대</li>
+                  <li><strong>기기 소유자 몫(98%)</strong>: 147,000원/월/대</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="mining-revenue-section">
+            <h3>2. PoW 채굴 (헌팅 수익)</h3>
+            <ul>
+              <li><strong>헌팅 발생량</strong>: 100건/일 × 30일 = 3,000건/월</li>
+              <li><strong>포인트 발생</strong>:
+                <ul>
+                  <li><strong>헌터(사용자) 포인트</strong>: 10P × 3,000건 = 30,000P (약 80,100원)</li>
+                  <li><strong>기기 소유자 포인트</strong>: 5P × 3,000건 = 15,000P (약 40,050원)</li>
+                </ul>
+              </li>
+              <li><strong>포인트 환산</strong>: 1포인트 ≒ 2.67원 (현재 추정 시세)</li>
+            </ul>
+          </div>
+          
+          <div class="mining-revenue-section">
+            <h3>3. 기기 1대당 총 가치 창출</h3>
+            <ul>
+              <li><strong>PoS 채굴</strong>: 150,000원/월</li>
+              <li><strong>PoW 헌팅</strong>: 약 120,150원/월 (45,000P)</li>
+              <li><strong>총 가치</strong>: 약 270,150원/월/대</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h2 class="section-title">당사자의 역할 구분</h2>
+        <div class="table-wrapper">
+          <table class="roles-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>주요 역할</th>
+                <th>수익 권한</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>기기 소유자 (마이너)</strong></td>
+                <td>XR7 기기 구매 및 투자, 계정 등록</td>
+                <td>PoS 채굴량의 98% + PoW 헌팅 포인트(5P/건)</td>
+              </tr>
+              <tr>
+                <td><strong>PC방 점주 (관리자)</strong></td>
+                <td>기기 설치 공간 제공, 전원/네트워크 관리, 헌팅 환경 조성</td>
+                <td>기본 관리비(월 1,500원/대) + PoS 채굴량의 2% + 헌팅 수익의 50%</td>
+              </tr>
+              <tr>
+                <td><strong>헌터 (PC방 이용자)</strong></td>
+                <td>QR 코드 스캔을 통한 AI 작업 요청</td>
+                <td>PoW 헌팅 포인트(10P/건)</td>
+              </tr>
+              <tr>
+                <td><strong>EdgeX 운영사</strong></td>
+                <td>플랫폼 운영, 기술 지원, 생태계 확장</td>
+                <td>기기 판매, 헌팅 수익의 10%, 플랫폼 수수료 등</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <h2 class="section-title">PC방 점주 수익 구조 (1대 기준)</h2>
+        <div class="pc-owner-revenue">
+          <div class="revenue-type">
+            <h3>1. 기기 채굴 관련 수익 (PoS)</h3>
+            <ul>
+              <li><strong>기본 관리 수수료</strong>: 1,500원/월/대 (고정)</li>
+              <li><strong>PoS 채굴 수익 (2%)</strong>: 3,000원/월/대 (150,000원 × 2%)</li>
+              <li><strong>소계</strong>: 4,500원/월/대</li>
+            </ul>
+          </div>
+          
+          <div class="revenue-type">
+            <h3>2. 헌팅 관련 수익 (PoW) - 새로운 분배율 적용</h3>
+            <p><strong>헌팅 수익 분배율</strong>:</p>
+            <ul>
+              <li>기기 소유자: 10%</li>
+              <li>회사: 10%</li>
+              <li>PC방 점주: 50%</li>
+              <li>헌팅 유저: 30%</li>
+            </ul>
+            <div class="table-wrapper">
+              <table class="hunting-table">
+                <thead>
+                  <tr>
+                    <th>헌팅 빈도</th>
+                    <th>월간 헌팅 건수</th>
+                    <th>총 포인트 가치</th>
+                    <th>PC방 점주 수익 (50%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>일일 10명</td>
+                    <td>300건/월</td>
+                    <td>약 12,015원</td>
+                    <td>6,007.5원/월/대</td>
+                  </tr>
+                  <tr>
+                    <td>일일 50명</td>
+                    <td>1,500건/월</td>
+                    <td>약 60,075원</td>
+                    <td>30,037.5원/월/대</td>
+                  </tr>
+                  <tr>
+                    <td>일일 100명</td>
+                    <td>3,000건/월</td>
+                    <td>약 120,150원</td>
+                    <td>60,075원/월/대</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <h2 class="section-title">PC방 점주 총 수익 계산 (헌팅 빈도별, 1대 기준)</h2>
+        <div class="table-wrapper">
+          <table class="total-revenue-table">
+            <thead>
+              <tr>
+                <th>헌팅 빈도</th>
+                <th>PoS 수익</th>
+                <th>PoW 수익</th>
+                <th>총 수익</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>일일 10명</td>
+                <td>4,500원</td>
+                <td>6,007.5원</td>
+                <td>10,507.5원/월</td>
+              </tr>
+              <tr>
+                <td>일일 50명</td>
+                <td>4,500원</td>
+                <td>30,037.5원</td>
+                <td>34,537.5원/월</td>
+              </tr>
+              <tr>
+                <td>일일 100명</td>
+                <td>4,500원</td>
+                <td>60,075원</td>
+                <td>64,575원/월</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <h2 class="section-title">PC방 규모별 월 수익 계산 (헌팅 빈도별)</h2>
+        
+        <h3 class="subsection-title">10대 운영 시 월 수익</h3>
+        <div class="calc-table">
+          <div class="table-wrapper">
+            <table class="scale-revenue-table">
+              <thead>
+                <tr>
+                  <th>헌팅 빈도</th>
+                  <th>계산식</th>
+                  <th>월 총 수익</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>일일 10명</td>
+                  <td>10,507.5원 × 10대</td>
+                  <td>105,075원</td>
+                </tr>
+                <tr>
+                  <td>일일 50명</td>
+                  <td>34,537.5원 × 10대</td>
+                  <td>345,375원</td>
+                </tr>
+                <tr>
+                  <td>일일 100명</td>
+                  <td>64,575원 × 10대</td>
+                  <td>645,750원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <h3 class="subsection-title">30대 운영 시 월 수익</h3>
+        <div class="calc-table">
+          <div class="table-wrapper">
+            <table class="scale-revenue-table">
+              <thead>
+                <tr>
+                  <th>헌팅 빈도</th>
+                  <th>계산식</th>
+                  <th>월 총 수익</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>일일 10명</td>
+                  <td>10,507.5원 × 30대</td>
+                  <td>315,225원</td>
+                </tr>
+                <tr>
+                  <td>일일 50명</td>
+                  <td>34,537.5원 × 30대</td>
+                  <td>1,036,125원</td>
+                </tr>
+                <tr>
+                  <td>일일 100명</td>
+                  <td>64,575원 × 30대</td>
+                  <td>1,937,250원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <h3 class="subsection-title">50대 운영 시 월 수익</h3>
+        <div class="calc-table">
+          <div class="table-wrapper">
+            <table class="scale-revenue-table">
+              <thead>
+                <tr>
+                  <th>헌팅 빈도</th>
+                  <th>계산식</th>
+                  <th>월 총 수익</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>일일 10명</td>
+                  <td>10,507.5원 × 50대</td>
+                  <td>525,375원</td>
+                </tr>
+                <tr>
+                  <td>일일 50명</td>
+                  <td>34,537.5원 × 50대</td>
+                  <td>1,726,875원</td>
+                </tr>
+                <tr>
+                  <td>일일 100명</td>
+                  <td>64,575원 × 50대</td>
+                  <td>3,228,750원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="mining-insights">
+          <h3>헌팅 증가에 따른 수익 증가율</h3>
+          <p>위 표에서 볼 수 있듯이, <strong>헌팅 빈도가 증가할수록 PC방 점주의 수익이 크게 증가</strong>합니다. 특히 헌팅 빈도가 일일 10명에서 100명으로 증가할 경우, 수익이 약 6배 이상 증가합니다.</p>
+          <p>PC방 환경은 헌팅이 자주 발생할 수 있는 최적의 공간이므로, 헌팅 활성화를 위한 다양한 방안을 고려해 볼 수 있습니다:</p>
+          <ul>
+            <li>이용자에게 헌팅 혜택 제공 (게임 아이템, 시간 할인 등)</li>
+            <li>QR코드 스캔 이벤트 진행</li>
+            <li>헌팅 횟수에 따른 적립 프로그램 운영</li>
+          </ul>
+        </div>
+        
+        <h2 class="section-title">단골 고객 혜택 및 이용자 수익 분석</h2>
+        
+        <div class="user-revenue-section">
+          <div class="user-revenue-card">
+            <h3>이용자(헌터) 30일 수익 시뮬레이션</h3>
+            <div class="table-wrapper">
+              <table class="user-revenue-table">
+                <thead>
+                  <tr>
+                    <th>헌팅 빈도</th>
+                    <th>월간 헌팅 건수</th>
+                    <th>획득 포인트</th>
+                    <th>환산 금액</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>일일 1회 헌팅</td>
+                    <td>30건/월</td>
+                    <td>300P (10P×30건)</td>
+                    <td>약 801원</td>
+                  </tr>
+                  <tr>
+                    <td>일일 3회 헌팅</td>
+                    <td>90건/월</td>
+                    <td>900P (10P×90건)</td>
+                    <td>약 2,403원</td>
+                  </tr>
+                  <tr>
+                    <td>일일 5회 헌팅</td>
+                    <td>150건/월</td>
+                    <td>1,500P (10P×150건)</td>
+                    <td>약 4,005원</td>
+                  </tr>
+                  <tr class="highlight-row">
+                    <td>일일 최대 10회 헌팅</td>
+                    <td>300건/월</td>
+                    <td>3,000P (10P×300건)</td>
+                    <td>약 8,010원</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">※ 1인당 일일 최대 10회 헌팅으로 제한된다고 가정</p>
+          </div>
+          
+          <div class="loyalty-program">
+            <h3>단골 고객 마케팅 프로그램 예시</h3>
+            <p>PC방 점주는 EdgeX 헌팅을 통해 단골 고객을 확보하고 충성도를 높일 수 있습니다. 이용자는 헌팅을 통해 포인트를 획득하고, 점주는 헌팅으로 수익이 늘어나는 상생 구조입니다.</p>
+            
+            <div class="loyalty-ideas">
+              <div class="loyalty-idea">
+                <h4>1. 헌팅 포인트 PC방 이용권 전환</h4>
+                <p>이용자가 획득한 포인트 일부를 PC방 이용 시간으로 교환할 수 있도록 하여 재방문 유도</p>
+                <p class="example">예) 3,000P 적립 시 1시간 무료 이용권 제공</p>
+              </div>
+              
+              <div class="loyalty-idea">
+                <h4>2. 헌팅 누적 혜택 프로그램</h4>
+                <p>월간 헌팅 횟수에 따라 등급을 나누고 다양한 혜택 제공</p>
+                <p class="example">예) VIP 등급(월 200회 이상) : 음료 무료, 주말 할인 등</p>
+              </div>
+              
+              <div class="loyalty-idea">
+                <h4>3. 친구 초대 시 더블 포인트</h4>
+                <p>기존 고객이 친구를 초대하여 함께 헌팅할 경우 양쪽 모두 추가 포인트 제공</p>
+                <p class="example">예) 친구 초대 시 양쪽 모두 15P/건으로 50% 추가 지급</p>
+              </div>
+            </div>
+            
+            <div class="win-win">
+              <h4>상생 효과</h4>
+              <ul>
+                <li><strong>이용자(헌터)</strong>: 게임하며 추가 수익 획득, 무료 이용 시간 확보</li>
+                <li><strong>PC방 점주</strong>: 단골 확보, 헌팅 증가로 더 많은 수익 창출, 타 PC방과 차별화</li>
+                <li><strong>기기 소유자</strong>: 헌팅 활성화로 수익 증가</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</MainLayout>
+
+<style>
+  .calculator-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+    position: relative;
+  }
+  
+  .calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .calculator-title {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .back-button {
+    background: rgba(0, 85, 255, 0.1);
+    color: var(--secondary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background: rgba(0, 85, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .calculator-content {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .intro-box {
+    background: #f8f9fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary);
+  }
+  
+  .intro-title {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-note {
+    color: #464b57;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  
+  .intro-list {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-list li {
+    margin-bottom: 0.8rem;
+    color: #464b57;
+    line-height: 1.5;
+  }
+  
+  .disclaimer {
+    font-size: 0.9rem;
+    color: #6c7280;
+    font-style: italic;
+  }
+  
+  .section-title {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    font-weight: 600;
+  }
+  
+  .subsection-title {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
+  }
+  
+  .mining-types {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .mining-type-card {
+    background: #f8f9fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+  }
+  
+  .mining-type-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .mining-type-card p {
+    color: #464b57;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  .mining-revenue-box {
+    background: #f8f9fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .mining-revenue-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e5eb;
+  }
+  
+  .mining-revenue-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .mining-revenue-section h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .mining-revenue-section ul {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+  
+  .mining-revenue-section ul li {
+    margin-bottom: 0.8rem;
+    color: #464b57;
+    line-height: 1.5;
+  }
+  
+  .mining-revenue-section ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .mining-revenue-section ul li ul {
+    margin-top: 0.8rem;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #eef2f7;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th {
+    background: #f0f4f8;
+    color: var(--primary);
+    text-align: left;
+    padding: 1rem;
+    font-weight: 600;
+  }
+  
+  td {
+    padding: 1rem;
+    border-top: 1px solid #eef2f7;
+    color: #464b57;
+    line-height: 1.5;
+  }
+  
+  .terms-table th:first-child,
+  .terms-table td:first-child {
+    width: 30%;
+  }
+  
+  .roles-table th:first-child,
+  .roles-table td:first-child {
+    width: 25%;
+  }
+  
+  .hunting-table th,
+  .hunting-table td,
+  .total-revenue-table th,
+  .total-revenue-table td,
+  .scale-revenue-table th,
+  .scale-revenue-table td,
+  .user-revenue-table th,
+  .user-revenue-table td {
+    text-align: center;
+  }
+  
+  .pc-owner-revenue {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .revenue-type {
+    background: #f8f9fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .revenue-type h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .revenue-type ul {
+    padding-left: 1.2rem;
+    margin: 0 0 1rem 0;
+  }
+  
+  .revenue-type ul li {
+    margin-bottom: 0.8rem;
+    color: #464b57;
+    line-height: 1.5;
+  }
+  
+  .revenue-type .table-wrapper {
+    margin-top: 1rem;
+  }
+  
+  .calc-table {
+    background: #f8f9fd;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin: 1rem 0 2rem;
+  }
+  
+  .mining-insights {
+    background: rgba(0, 85, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 3px solid var(--secondary);
+  }
+  
+  .mining-insights h3 {
+    color: var(--secondary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .mining-insights p {
+    color: #464b57;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .mining-insights ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+  }
+  
+  .mining-insights ul li {
+    margin-bottom: 0.5rem;
+    color: #464b57;
+    line-height: 1.5;
+  }
+  
+  .user-revenue-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .user-revenue-card {
+    background: #f8f9fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+  }
+  
+  .user-revenue-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .highlight-row {
+    background: rgba(0, 85, 255, 0.05);
+    font-weight: 600;
+  }
+  
+  .note {
+    font-size: 0.9rem;
+    color: #6c7280;
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .loyalty-program {
+    background: #f8f9fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary);
+  }
+  
+  .loyalty-program h3 {
+    color: var(--secondary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .loyalty-program p {
+    color: #464b57;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .loyalty-ideas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .loyalty-idea {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 2px solid var(--primary);
+  }
+  
+  .loyalty-idea h4 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .loyalty-idea p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  .loyalty-idea .example {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #6c7280;
+    margin-bottom: 0;
+  }
+  
+  .win-win {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+  }
+  
+  .win-win h4 {
+    color: var(--secondary);
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .win-win ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+  }
+  
+  .win-win ul li {
+    margin-bottom: 0.5rem;
+    color: #464b57;
+    line-height: 1.5;
+  }
+  
+  .warning-box {
+    background: rgba(255, 173, 51, 0.1);
+    border-left: 4px solid #ffad33;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+  }
+  
+  .warning-box h3 {
+    color: #e69500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .warning-box p {
+    color: #464b57;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .warning-box p:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 992px) {
+    .mining-types,
+    .pc-owner-revenue,
+    .user-revenue-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .calculator-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .calculator-title {
+      font-size: 1.8rem;
+    }
+    
+    .calculator-content {
+      padding: 1.5rem;
+    }
+    
+    th, td {
+      padding: 0.8rem;
+    }
+    
+    .intro-title {
+      font-size: 1.2rem;
+    }
+    
+    .section-title {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+</MainLayout>

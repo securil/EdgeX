@@ -1,0 +1,222 @@
+---
+// ProcessComparison.astro
+// 두 가지 프로세스 워크플로우를 비교하는 컴포넌트
+
+export interface Process {
+  time: string;
+  description: string;
+}
+
+export interface Metric {
+  name: string;
+  traditional: string;
+  edgex: string;
+  improvement: string;
+}
+
+interface Props {
+  traditional: Process[];
+  edgex: Process[];
+  metrics: Metric[];
+}
+
+const { traditional, edgex, metrics } = Astro.props;
+---
+
+<div class="process-comparison">
+  <div class="process-flows">
+    <div class="process-flow">
+      <h4 class="flow-title">기존 LLM 워크플로우</h4>
+      <div class="timeline">
+        {traditional.map((step) => (
+          <div class="timeline-item">
+            <div class="timeline-time">{step.time}</div>
+            <div class="timeline-content">{step.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <div class="process-flow">
+      <h4 class="flow-title">EdgeX 워크플로우</h4>
+      <div class="timeline edgex-timeline">
+        {edgex.map((step) => (
+          <div class="timeline-item">
+            <div class="timeline-time">{step.time}</div>
+            <div class="timeline-content">{step.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+  
+  <div class="metrics-comparison">
+    <h4 class="metrics-title">성능 비교</h4>
+    <div class="metrics-table">
+      <div class="metric-header">
+        <div class="metric-cell">평가 항목</div>
+        <div class="metric-cell">기존 방식</div>
+        <div class="metric-cell">EdgeX</div>
+        <div class="metric-cell">개선도</div>
+      </div>
+      
+      {metrics.map((metric) => (
+        <div class="metric-row">
+          <div class="metric-cell">{metric.name}</div>
+          <div class="metric-cell">{metric.traditional}</div>
+          <div class="metric-cell highlight">{metric.edgex}</div>
+          <div class="metric-cell improvement">{metric.improvement}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .process-comparison {
+    background: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .process-flows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: #ffffff;
+  }
+  
+  .flow-title {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .timeline {
+    position: relative;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    width: 2px;
+    background: #e0e0e0;
+  }
+  
+  .edgex-timeline::before {
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  }
+  
+  .timeline-item {
+    padding-left: 50px;
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    z-index: 1;
+  }
+  
+  .edgex-timeline .timeline-item::before {
+    background: var(--primary);
+  }
+  
+  .timeline-time {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+  }
+  
+  .timeline-content {
+    color: #4a4e69;
+    background: #f0f4f8;
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+  
+  .metrics-comparison {
+    background: linear-gradient(145deg, #f0f4f8, #ffffff);
+    padding: 2rem;
+  }
+  
+  .metrics-title {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .metrics-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .metric-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background: rgba(0, 85, 255, 0.1);
+    font-weight: 600;
+  }
+  
+  .metric-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .metric-row:last-child {
+    border-bottom: none;
+  }
+  
+  .metric-cell {
+    padding: 0.8rem 1rem;
+    color: #4a4e69;
+  }
+  
+  .highlight {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  
+  .improvement {
+    color: #00de9a;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .process-flows {
+      grid-template-columns: 1fr;
+    }
+    
+    .metric-row, .metric-header {
+      grid-template-columns: 1fr;
+    }
+    
+    .metric-cell {
+      border-bottom: 1px dashed #e0e0e0;
+      padding: 0.6rem;
+    }
+    
+    .metric-row {
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+</style>

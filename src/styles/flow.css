@@ -1,6 +1,6 @@
 /* 흐름도 스타일 */
 .flow-container {
-  margin: 2.5rem 0;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
 }
@@ -11,6 +11,7 @@
   height: auto;
 }
 
+/* 다크 모드 노드 (기존 스타일) */
 .flow-node {
   fill: var(--dark-surface);
   stroke: var(--primary);
@@ -23,11 +24,34 @@
   stroke-width: 2px;
 }
 
+/* 라이트 모드 노드 (새로운 스타일) */
+.flow-node-light {
+  fill: var(--light-bg);
+  stroke: var(--primary);
+  stroke-width: 2px;
+}
+
+.flow-node-accent-light {
+  fill: rgba(0, 85, 255, 0.05);
+  stroke: var(--primary);
+  stroke-width: 2px;
+}
+
+/* 다크 모드 텍스트 (기존 스타일) */
 .flow-text {
-  font-size: 16px;
+  font-size: 14px;
   text-anchor: middle;
   font-family: 'Noto Sans KR', sans-serif;
   fill: var(--white);
+  font-weight: 500;
+}
+
+/* 라이트 모드 텍스트 (새로운 스타일) */
+.flow-text-light {
+  font-size: 14px;
+  text-anchor: middle;
+  font-family: 'Noto Sans KR', sans-serif;
+  fill: var(--text-dark-primary);
   font-weight: 500;
 }
 
@@ -41,38 +65,212 @@
 /* 비교 컨테이너 */
 .vs-container {
   display: flex;
-  gap: 2rem;
-  margin: 2.5rem 0;
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
+/* 다크 모드 비교 박스 (기존 스타일) */
 .vs-box {
   flex: 1;
-  padding: 1.8rem;
-  border-radius: 12px;
+  padding: 1.5rem;
+  border-radius: 8px;
   box-shadow: var(--shadow-dark);
   background: var(--dark-surface);
 }
 
-.vs-box.left {
-  border-left: 5px solid var(--gray-dark);
+/* 라이트 모드 비교 박스 (새로운 스타일) */
+.vs-box-light {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  background: var(--light-bg);
+}
+
+.vs-box.left, .vs-box-light.left {
+  border-left: 3px solid var(--gray-dark);
 }
 
 .vs-box.right {
-  border-left: 5px solid var(--primary);
+  border-left: 3px solid var(--primary);
   background: linear-gradient(145deg, var(--dark-surface), rgba(0, 85, 255, 0.1));
+}
+
+.vs-box-light.right {
+  border-left: 3px solid var(--primary);
+  background: linear-gradient(145deg, var(--light-bg), rgba(0, 85, 255, 0.05));
 }
 
 .vs-title {
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
   text-align: center;
   color: var(--text-accent);
+}
+
+.vs-box-light .vs-title {
+  color: var(--primary);
+}
+
+.vs-box-light p {
+  color: var(--text-dark-secondary);
+}
+
+/* 타임라인 스타일 - 추가됨 */
+.timeline-flow {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-flow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: #e0e0e0;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.step-time {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.step-content {
+  background: var(--light-bg);
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: var(--text-dark-secondary);
+  font-size: 0.95rem;
+}
+
+/* 시나리오 비교 스타일 - 추가됨 */
+.scenario-container {
+  background: var(--light-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-light);
+}
+
+.scenario-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.75rem;
+}
+
+.scenario-title {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 워크플로우 카드 스타일 */
+.workflow-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.workflow-step {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.workflow-step::after {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  left: 1.25rem;
+  width: 2px;
+  height: calc(100% + 2rem);
+  background: rgba(0, 178, 255, 0.3);
+  z-index: 0;
+}
+
+.workflow-step:last-child::after {
+  display: none;
+}
+
+.step-number {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.step-card {
+  flex: 1;
+  background: var(--light-bg);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: var(--shadow-light);
+}
+
+.step-title {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  color: var(--text-dark-secondary);
+  font-size: 0.95rem;
 }
 
 /* 반응형 디자인 */
 @media (max-width: 1024px) {
   .vs-container {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .flow-text, .flow-text-light {
+    font-size: 12px;
+  }
+  
+  .workflow-step {
+    flex-direction: column;
+  }
+  
+  .workflow-step::after {
+    left: 1.25rem;
+    top: 3.5rem;
+    height: calc(100% - 1.5rem);
+  }
+  
+  .step-number {
+    margin-bottom: 1rem;
   }
 }

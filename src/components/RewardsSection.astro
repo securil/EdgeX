@@ -15,35 +15,35 @@ import Table from './Table.astro';
       <Card className="reward-card">
         <div class="reward-header">
           <div class="reward-icon">
-            <i class="fas fa-gift"></i>
+            <i class="fas fa-coins"></i>
           </div>
-          <h3>기본 보상</h3>
+          <h3>기본 관리비</h3>
         </div>
         <div class="reward-body">
-          <p>설치 시 기본 지원금 + Earn 포인트 누적</p>
+          <p>PC방에 설치된 XR7 기기당 고정 관리비 지급</p>
           <div class="reward-details">
             <div class="reward-detail">
-              <span class="detail-label">설치 보너스</span>
-              <span class="detail-value">$EX 100</span>
+              <span class="detail-label">월 관리비</span>
+              <span class="detail-value">기기당 1,500원</span>
             </div>
             <div class="reward-detail">
-              <span class="detail-label">포인트 전환율</span>
-              <span class="detail-value">100%</span>
+              <span class="detail-label">지급 주기</span>
+              <span class="detail-value">매월 1일</span>
             </div>
           </div>
-          <div class="detail-note">초기 참여 인센티브</div>
+          <div class="detail-note">안정적인 기본 수익</div>
         </div>
       </Card>
       
       <Card className="reward-card highlight">
         <div class="reward-header">
           <div class="reward-icon">
-            <i class="fas fa-coins"></i>
+            <i class="fas fa-chart-line"></i>
           </div>
-          <h3>Earn 채굴</h3>
+          <h3>채굴량 분배</h3>
         </div>
         <div class="reward-body">
-          <p>AI 서비스 처리량에 따라 $EX 포인트 발생</p>
+          <p>XR7 기기의 월간 채굴량의 2%를 PC방에 분배</p>
           <div class="reward-chart">
             <div class="chart-bars">
               <div class="chart-bar" style="height: 30%;">
@@ -64,30 +64,30 @@ import Table from './Table.astro';
       <Card className="reward-card">
         <div class="reward-header">
           <div class="reward-icon">
-            <i class="fas fa-handshake"></i>
+            <i class="fas fa-user-plus"></i>
           </div>
-          <h3>추가 인센티브</h3>
+          <h3>헌팅 보너스</h3>
         </div>
         <div class="reward-body">
-          <p>추천 리워드, 지역 파트너 우선권</p>
+          <p>PC방 이용자를 통한 신규 사용자 유치 보상</p>
           <ul class="reward-list">
-            <li>신규 노드 추천 시 5%의 보상 공유</li>
-            <li>지역 서비스 독점 파트너십 기회</li>
-            <li>장기 참여자 보너스 지급</li>
+            <li>신규 사용자 등록 시 추가 토큰 보상</li>
+            <li>헌팅된 사용자 활동에 따른 수수료</li>
+            <li>이용자 특별 혜택을 통한 고객 유치</li>
           </ul>
-          <div class="detail-note">네트워크 확장 기여 보상</div>
+          <div class="detail-note">고객 기반 확장 인센티브</div>
         </div>
       </Card>
       
       <Card className="reward-card">
         <div class="reward-header">
           <div class="reward-icon">
-            <i class="fas fa-bullhorn"></i>
+            <i class="fas fa-award"></i>
           </div>
-          <h3>마케팅 혜택</h3>
+          <h3>인증점 혜택</h3>
         </div>
         <div class="reward-body">
-          <p>인증 로고/포스터 제공, 앱 노출 가능성</p>
+          <p>EdgeX 공식 인증 PC방으로서의 브랜딩 및 마케팅 혜택</p>
           <div class="marketing-benefits">
             <div class="marketing-benefit">
               <div class="benefit-icon"><i class="far fa-star"></i></div>
@@ -107,19 +107,107 @@ import Table from './Table.astro';
       </Card>
     </div>
     
+    <div class="rewards-simulator">
+      <h3 class="section-subtitle">PC방 규모별 예상 월 수익</h3>
+      <div class="rewards-calc-cta">
+        <a href="/income-calculator" target="_blank" class="calc-link">
+          <i class="fas fa-calculator"></i>
+          <span>수익상세 계산법 보기</span>
+        </a>
+      </div>
+      <div class="simulator-grid">
+        <div class="simulator-card">
+          <div class="simulator-header">
+            <div class="simulator-icon">10</div>
+            <h4>10대 운영</h4>
+          </div>
+          <div class="simulator-body">
+            <div class="sim-calculation">
+              <div class="sim-row">
+                <span>기본 관리비</span>
+                <span>15,000원</span>
+              </div>
+              <div class="sim-row">
+                <span>채굴량 2% (예상)</span>
+                <span>~17,000원</span>
+              </div>
+              <div class="sim-divider"></div>
+              <div class="sim-row total">
+                <span>합계</span>
+                <span>~32,000원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="simulator-card">
+          <div class="simulator-header">
+            <div class="simulator-icon">30</div>
+            <h4>30대 운영</h4>
+          </div>
+          <div class="simulator-body">
+            <div class="sim-calculation">
+              <div class="sim-row">
+                <span>기본 관리비</span>
+                <span>45,000원</span>
+              </div>
+              <div class="sim-row">
+                <span>채굴량 2% (예상)</span>
+                <span>~51,000원</span>
+              </div>
+              <div class="sim-divider"></div>
+              <div class="sim-row total">
+                <span>합계</span>
+                <span>~96,000원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="simulator-card">
+          <div class="simulator-header">
+            <div class="simulator-icon">50</div>
+            <h4>50대 운영</h4>
+          </div>
+          <div class="simulator-body">
+            <div class="sim-calculation">
+              <div class="sim-row">
+                <span>기본 관리비</span>
+                <span>75,000원</span>
+              </div>
+              <div class="sim-row">
+                <span>채굴량 2% (예상)</span>
+                <span>~85,000원</span>
+              </div>
+              <div class="sim-divider"></div>
+              <div class="sim-row total">
+                <span>합계</span>
+                <span>~160,000원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="reward-table-container">
       <h3 class="section-subtitle">PC방 보상 구조 상세</h3>
       <div class="table-wrapper">
         <Table headers={["항목", "내용", "비고"]}>
           <tr>
-            <td><strong>기본 보상</strong></td>
-            <td>설치 시 기본 지원금 + Earn 포인트 누적</td>
-            <td>초기 참여 인센티브</td>
+            <td><strong>기본 관리비</strong></td>
+            <td>기기당 월 1,500원 고정 수익</td>
+            <td>안정적인 기본 수익</td>
           </tr>
           <tr>
-            <td><strong>Earn 채굴</strong></td>
-            <td>AI 서비스 처리량에 따라 $EX 포인트 발생</td>
-            <td>활동량 비례 보상</td>
+            <td><strong>채굴량 분배</strong></td>
+            <td>월간 채굴량의 2% 수익</td>
+            <td>활동량 비례 추가 수익</td>
+          </tr>
+          <tr>
+            <td><strong>헌팅 보너스</strong></td>
+            <td>PC방 이용자 헌팅 시 추가 포인트</td>
+            <td>손님 참여 유도로 수익 증대</td>
           </tr>
           <tr>
             <td><strong>추가 인센티브</strong></td>
@@ -128,13 +216,8 @@ import Table from './Table.astro';
           </tr>
           <tr>
             <td><strong>마케팅 혜택</strong></td>
-            <td>인증 로고/포스터 제공, 앱 노출 가능성</td>
+            <td>인증 로고/포스터 제공, 앱 노출</td>
             <td>브랜딩 강화 지원</td>
-          </tr>
-          <tr>
-            <td><strong>장기 참여 보상</strong></td>
-            <td>3개월 이상 노드 운영 시 추가 보상</td>
-            <td>충성도 보상 프로그램</td>
           </tr>
         </Table>
       </div>
@@ -227,7 +310,7 @@ import Table from './Table.astro';
   }
   
   .reward-card.highlight {
-    background: linear-gradient(145deg, rgba(0, 85, 255, 0.1), var(--dark-surface));
+    background: linear-gradient(145deg, #f0f4f8, rgba(0, 85, 255, 0.1));
     border-left: 4px solid var(--primary);
   }
   
@@ -253,17 +336,17 @@ import Table from './Table.astro';
   .reward-header h3 {
     font-size: 1.2rem;
     margin: 0;
-    color: var(--text-accent);
+    color: var(--primary);
   }
   
   .reward-body p {
-    color: var(--text-secondary);
+    color: #4a4e69;
     margin-bottom: 1.2rem;
     font-size: 0.95rem;
   }
   
   .reward-details {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(240, 244, 248, 0.7);
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -280,7 +363,7 @@ import Table from './Table.astro';
   }
   
   .detail-label {
-    color: var(--text-secondary);
+    color: #4a4e69;
     font-size: 0.9rem;
   }
   
@@ -291,7 +374,7 @@ import Table from './Table.astro';
   
   .detail-note {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: #4a4e69;
     font-style: italic;
     text-align: right;
   }
@@ -306,7 +389,7 @@ import Table from './Table.astro';
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.8rem;
-    color: var(--text-secondary);
+    color: #4a4e69;
   }
   
   .reward-list li::before {
@@ -330,7 +413,7 @@ import Table from './Table.astro';
   
   .chart-bar {
     width: 60px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(240, 244, 248, 0.7);
     border-radius: 8px 8px 0 0;
     position: relative;
     transition: var(--transition-normal);
@@ -345,7 +428,7 @@ import Table from './Table.astro';
   }
   
   .chart-bar.secondary {
-    background: rgba(0, 178, 255, 0.2);
+    background: rgba(0, 178, 255, 0.4);
   }
   
   .bar-label {
@@ -355,12 +438,12 @@ import Table from './Table.astro';
     right: 0;
     text-align: center;
     font-size: 0.8rem;
-    color: var(--text-secondary);
+    color: #4a4e69;
   }
   
   .chart-label {
     text-align: center;
-    color: var(--text-secondary);
+    color: #4a4e69;
     font-size: 0.9rem;
     margin-top: 1.5rem;
   }
@@ -391,16 +474,98 @@ import Table from './Table.astro';
   
   .benefit-text {
     font-size: 0.8rem;
-    color: var(--text-secondary);
+    color: #4a4e69;
+  }
+  
+  .rewards-simulator {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-subtitle {
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+  
+  .simulator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .simulator-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .simulator-header {
+    background: linear-gradient(145deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .simulator-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .simulator-header h4 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .simulator-body {
+    padding: 1.5rem;
+  }
+  
+  .sim-calculation {
+    width: 100%;
+  }
+  
+  .sim-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    color: #4a4e69;
+  }
+  
+  .sim-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+  }
+  
+  .sim-row.total {
+    color: #1a1a2e;
+    font-weight: 700;
+    font-size: 1.2rem;
   }
   
   .reward-table-container {
-    background: var(--dark-surface);
+    background: #ffffff;
     border-radius: 12px;
     padding: 2rem;
     margin-bottom: 3rem;
     position: relative;
     z-index: 1;
+    box-shadow: var(--shadow-light);
   }
   
   .table-wrapper {
@@ -415,17 +580,17 @@ import Table from './Table.astro';
     grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
     overflow: hidden;
-    background: linear-gradient(145deg, var(--dark-surface), rgba(0, 85, 255, 0.1));
+    background: linear-gradient(145deg, #ffffff, rgba(0, 85, 255, 0.05));
   }
   
   .cta-content h3 {
     font-size: 1.5rem;
-    color: var(--text-primary);
+    color: var(--primary);
     margin-bottom: 1rem;
   }
   
   .cta-content p {
-    color: var(--text-secondary);
+    color: #4a4e69;
     margin-bottom: 1.5rem;
   }
   
@@ -445,6 +610,34 @@ import Table from './Table.astro';
     max-width: 300px;
   }
   
+  .rewards-calc-cta {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .calc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(145deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .calc-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-dark);
+  }
+  
+  .calc-link i {
+    font-size: 1.1rem;
+  }
+  
   @media (max-width: 768px) {
     .rewards-grid {
       grid-template-columns: 1fr;
@@ -460,6 +653,15 @@ import Table from './Table.astro';
     
     .reward-table-container {
       padding: 1.5rem;
+    }
+    
+    .simulator-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .calc-link {
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
     }
   }
 </style>

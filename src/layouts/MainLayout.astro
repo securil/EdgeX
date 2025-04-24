@@ -28,6 +28,42 @@ const { title, description = "EdgeX는 분산형 AI 인프라를 구축하는 We
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <script is:inline>
+    // Base URL 전역 변수 설정
+    window.BASE_URL = '/EdgeX';
+    console.log("BASE_URL는:", window.BASE_URL);
+    
+    // 이 스크립트는 경로 리디렉션 처리를 위한 것입니다
+    document.addEventListener('DOMContentLoaded', function() {
+      // 이미지 경로 수정
+      document.querySelectorAll('img').forEach(img => {
+        const src = img.getAttribute('src');
+        if(src && src.startsWith('/') && !src.startsWith('/EdgeX') && 
+           !src.startsWith('http') && !src.startsWith('data:')) {
+          img.src = '/EdgeX' + src;
+        }
+      });
+      
+      // CSS 링크 경로 수정
+      document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+        const href = link.getAttribute('href');
+        if(href && href.startsWith('/_astro/')) {
+          link.href = '/EdgeX' + href;
+        }
+      });
+      
+      // 링크 경로 수정 (a 태그에 대한 처리 추가)
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if(href && href.startsWith('/') && !href.startsWith('/EdgeX') && 
+           !href.startsWith('http') && !href.startsWith('#')) {
+          link.href = '/EdgeX' + href;
+        }
+      });
+      
+      // JavaScript 이벤트 핸들러 제거 - 직접 href 속성만 사용
+    });
+  </script>
 </head>
 <body>
   <slot />
@@ -62,10 +98,7 @@ const { title, description = "EdgeX는 분산형 AI 인프라를 구축하는 We
     </ul>
   </nav>
   
-  <script>
-    // 전역 변수로 base URL 노출
-    window.BASE_URL = import.meta.env.BASE_URL;
-    
+  <script is:inline>
     // 스크롤 시 섹션 애니메이션
     document.addEventListener('DOMContentLoaded', function() {
       const sections = document.querySelectorAll('section');

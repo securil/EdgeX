@@ -4,9 +4,9 @@ import { getImage } from '../layouts/MainLayout.astro';
 <header>
   <div class="container flex-sb">
     <div class="logo">
-      <a href="#" class="logo-wrapper">
+      <a href={import.meta.env.BASE_URL + "/"} class="logo-wrapper">
         <span class="logo-text">EdgeX</span>
-        <img src={getImage('/image/EdgeX-logo.png')} alt="EdgeX Logo" class="logo-image">
+        <img src={import.meta.env.BASE_URL + "/image/EdgeX-logo.png"} alt="EdgeX Logo" class="logo-image">
         <span class="logo-badge">피씨방</span>
       </a>
     </div>
@@ -17,6 +17,7 @@ import { getImage } from '../layouts/MainLayout.astro';
         <li><a href="#infra" class="nav-link">인프라 분석</a></li>
         <li><a href="#expectations" class="nav-link">기대 효과</a></li>
         <li><a href="#rewards" class="nav-link">보상 구조</a></li>
+        <li><a href={import.meta.env.BASE_URL + "/income-calculator"} class="nav-link calc-link">수익 분석기</a></li>
       </ul>
     </nav>
     <button class="mobile-menu-toggle" aria-label="메뉴 열기">
@@ -104,6 +105,23 @@ import { getImage } from '../layouts/MainLayout.astro';
   
   .nav-link:hover::after, .nav-link.active::after {
     width: 100%;
+  }
+  
+  .calc-link {
+    background-color: rgba(255, 91, 172, 0.15);
+    color: var(--pink) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .calc-link:hover {
+    background-color: rgba(255, 91, 172, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .calc-link::after {
+    display: none;
   }
   
   .mobile-menu-toggle {
