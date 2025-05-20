@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>EdgeX Ecosystem</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0A192F" x="0" y="0" width="800" height="600"></rect>
+        <g transform="translate(100, 100)">
+            <!-- Center Node -->
+            <circle cx="300" cy="200" r="50" fill="#0055FF" stroke="#FFFFFF" stroke-width="2"></circle>
+            <text x="300" y="205" font-family="Arial" font-size="16" fill="white" text-anchor="middle">EdgeX</text>
+            
+            <!-- PC Bang Node -->
+            <circle cx="150" cy="100" r="40" fill="#0078FF" stroke="#FFFFFF" stroke-width="2"></circle>
+            <text x="150" y="105" font-family="Arial" font-size="14" fill="white" text-anchor="middle">PC방</text>
+            <line x1="200" y1="140" x2="270" y2="170" stroke="#FFFFFF" stroke-width="2"></line>
+            
+            <!-- Developer Node -->
+            <circle cx="450" cy="100" r="40" fill="#0078FF" stroke="#FFFFFF" stroke-width="2"></circle>
+            <text x="450" y="105" font-family="Arial" font-size="14" fill="white" text-anchor="middle">개발자</text>
+            <line x1="400" y1="140" x2="330" y2="170" stroke="#FFFFFF" stroke-width="2"></line>
+            
+            <!-- User Node -->
+            <circle cx="150" cy="300" r="40" fill="#0078FF" stroke="#FFFFFF" stroke-width="2"></circle>
+            <text x="150" y="305" font-family="Arial" font-size="14" fill="white" text-anchor="middle">사용자</text>
+            <line x1="200" y1="260" x2="270" y2="230" stroke="#FFFFFF" stroke-width="2"></line>
+            
+            <!-- Service Provider Node -->
+            <circle cx="450" cy="300" r="40" fill="#0078FF" stroke="#FFFFFF" stroke-width="2"></circle>
+            <text x="450" y="305" font-family="Arial" font-size="14" fill="white" text-anchor="middle">서비스 제공자</text>
+            <line x1="400" y1="260" x2="330" y2="230" stroke="#FFFFFF" stroke-width="2"></line>
+            
+            <!-- Connection Lines Background Glow -->
+            <line x1="200" y1="140" x2="270" y2="170" stroke="#0055FF" stroke-width="6" opacity="0.3"></line>
+            <line x1="400" y1="140" x2="330" y2="170" stroke="#0055FF" stroke-width="6" opacity="0.3"></line>
+            <line x1="200" y1="260" x2="270" y2="230" stroke="#0055FF" stroke-width="6" opacity="0.3"></line>
+            <line x1="400" y1="260" x2="330" y2="230" stroke="#0055FF" stroke-width="6" opacity="0.3"></line>
+            
+            <!-- Circuit Pattern -->
+            <path d="M50,50 L100,50 L100,80 L130,80" stroke="#0055FF" stroke-width="1" opacity="0.5"></path>
+            <path d="M550,50 L500,50 L500,80 L470,80" stroke="#0055FF" stroke-width="1" opacity="0.5"></path>
+            <path d="M50,350 L100,350 L100,320 L130,320" stroke="#0055FF" stroke-width="1" opacity="0.5"></path>
+            <path d="M550,350 L500,350 L500,320 L470,320" stroke="#0055FF" stroke-width="1" opacity="0.5"></path>
+            
+            <!-- Background Circuit Pattern -->
+            <path d="M0,0 L600,400" stroke="#0055FF" stroke-width="1" opacity="0.1"></path>
+            <path d="M0,400 L600,0" stroke="#0055FF" stroke-width="1" opacity="0.1"></path>
+            <path d="M300,0 L300,400" stroke="#0055FF" stroke-width="1" opacity="0.1"></path>
+            <path d="M0,200 L600,200" stroke="#0055FF" stroke-width="1" opacity="0.1"></path>
+            
+            <!-- Small Nodes -->
+            <circle cx="50" cy="50" r="5" fill="#0055FF"></circle>
+            <circle cx="550" cy="50" r="5" fill="#0055FF"></circle>
+            <circle cx="50" cy="350" r="5" fill="#0055FF"></circle>
+            <circle cx="550" cy="350" r="5" fill="#0055FF"></circle>
+        </g>
+    </g>
+</svg>

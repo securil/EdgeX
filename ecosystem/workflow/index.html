@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="EdgeX는 분산형 AI 인프라를 구축하는 Web3 기반의 엣지 컴퓨팅 프로젝트입니다. PC방을 위한 도입 제안서입니다."><meta name="keywords" content="EdgeX, Web3, 엣지 컴퓨팅, AI 인프라, PC방, 분산형"><title>서비스 흐름도 | EdgeX</title><!-- 폰트 최적화: preconnect와 preload 사용 --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'"><!-- 아이콘 폰트 지연 로드 --><link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'"><!-- 폰트가 로드되지 않았을 때를 위한 대체 스타일 --><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"><script>
+    // Base URL 전역 변수 설정
+    window.BASE_URL = '${import.meta.env.BASE_URL}';
+    console.log("BASE_URL는:", window.BASE_URL);
+    
+    // 경로 생성 유틸리티 함수
+    window.getPath = function(path) {
+      // 경로가 슬래시로 시작하는지 확인하고 없으면 추가
+      const formattedPath = path.startsWith('/') ? path : `/${path}`;
+      return window.BASE_URL + formattedPath;
+    };
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOM이 로드되었습니다");
+    });
+  </script><link rel="stylesheet" href="/EdgeX/_assets/index.X5qw8zEV.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container" data-astro-cid-3ef6ksr2> <div class="logo" data-astro-cid-3ef6ksr2> <a href="/EdgeX/" data-astro-cid-3ef6ksr2> <span class="logo-text" data-astro-cid-3ef6ksr2>EdgeX</span> <img src="/EdgeX/image/EdgeX-logo.png" alt="EdgeX Logo" class="logo-image" data-astro-cid-3ef6ksr2> <span class="logo-badge" data-astro-cid-3ef6ksr2>피씨방</span> </a> </div> <nav class="main-nav" data-astro-cid-3ef6ksr2> <ul class="nav-list" data-astro-cid-3ef6ksr2> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/" data-astro-cid-3ef6ksr2>홈</a></li> <!-- 소개 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/about" data-astro-cid-3ef6ksr2>EdgeX 소개</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/overview" data-astro-cid-3ef6ksr2>프로젝트 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/innovation" data-astro-cid-3ef6ksr2>AI 인프라 혁신</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/comparison" data-astro-cid-3ef6ksr2>경쟁사 비교</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/roadmap" data-astro-cid-3ef6ksr2>로드맵</a></li> </ul> </li> <!-- PC방 제안 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/pcbang" data-astro-cid-3ef6ksr2>PC방 제안</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/overview" data-astro-cid-3ef6ksr2>위탁관리 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/xr7" data-astro-cid-3ef6ksr2>XR7 디바이스</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/rewards" data-astro-cid-3ef6ksr2>보상 구조</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/income-calculator" data-astro-cid-3ef6ksr2>수익 계산기</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/participation" data-astro-cid-3ef6ksr2>참여 방법</a></li> </ul> </li> <!-- 생태계 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/ecosystem" data-astro-cid-3ef6ksr2>생태계</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/structure" data-astro-cid-3ef6ksr2>구조 및 역할</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/token" data-astro-cid-3ef6ksr2>토큰 경제</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/workflow" data-astro-cid-3ef6ksr2>서비스 흐름도</a></li> </ul> </li> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/contact" data-astro-cid-3ef6ksr2>문의하기</a></li> </ul> </nav> <button class="mobile-toggle" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> </button> </div> </header>  <script type="module">document.addEventListener("DOMContentLoaded",function(){const i=document.querySelector(".mobile-toggle"),c=document.querySelector(".main-nav"),t=document.querySelectorAll(".nav-item.dropdown");i&&c&&i.addEventListener("click",function(){i.classList.toggle("active"),c.classList.toggle("active"),c.classList.contains("active")||t.forEach(e=>e.classList.remove("active"))}),t.forEach(e=>{e.querySelector("a").addEventListener("click",function(n){window.innerWidth<=768&&(n.preventDefault(),t.forEach(s=>{s!==e&&s.classList.remove("active")}),e.classList.toggle("active"))})}),window.addEventListener("resize",function(){window.innerWidth>768&&(c.classList.remove("active"),i.classList.remove("active"),t.forEach(e=>e.classList.remove("active")))}),window.addEventListener("scroll",function(){const e=document.querySelector(".site-header");window.scrollY>75?e.classList.add("scrolled"):e.classList.remove("scrolled")}),window.innerWidth<=768&&t.forEach(e=>{e.classList.add("mobile")})});</script>  <div class="container mx-auto px-4 py-12"> <div class="mb-12 text-center"> <h1 class="text-4xl font-bold mb-4">EdgeX 서비스 흐름도</h1> <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+분산형 엣지 컴퓨팅 네트워크에서 AI 서비스가 작동하는 방식
+</p> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">기존 클라우드 vs EdgeX 흐름 비교</h2> <div class="grid md:grid-cols-2 gap-8"> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-4 text-center">기존 클라우드 기반 AI 서비스</h3> <div class="space-y-4"> <div class="bg-gray-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-gray-400 flex items-center justify-center text-white font-bold">1</div> <div class="ml-5"> <h4 class="font-semibold">사용자 요청</h4> <p class="text-sm">사용자가 AI 서비스(이미지 생성, 텍스트 분석 등)를 요청</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-gray-300"></div> </div> <div class="bg-gray-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-gray-400 flex items-center justify-center text-white font-bold">2</div> <div class="ml-5"> <h4 class="font-semibold">중앙 데이터센터 전송</h4> <p class="text-sm">요청이 멀리 떨어진 중앙 데이터센터로 전송됨 (높은 지연 시간)</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-gray-300"></div> </div> <div class="bg-gray-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-gray-400 flex items-center justify-center text-white font-bold">3</div> <div class="ml-5"> <h4 class="font-semibold">대규모 서버에서 처리</h4> <p class="text-sm">대규모 전용 서버에서 AI 연산 처리 (높은 비용)</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-gray-300"></div> </div> <div class="bg-gray-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-gray-400 flex items-center justify-center text-white font-bold">4</div> <div class="ml-5"> <h4 class="font-semibold">결과 반환</h4> <p class="text-sm">처리된 결과가 다시 먼 거리를 거쳐 사용자에게 전달</p> </div> </div> </div> <div class="mt-6 bg-red-50 p-4 rounded-lg"> <h4 class="font-semibold text-red-700">주요 문제점</h4> <ul class="space-y-1 text-sm"> <li class="flex items-start"> <span class="text-red-600 mr-2">•</span> <span>높은 지연 시간 (100-500ms)</span> </li> <li class="flex items-start"> <span class="text-red-600 mr-2">•</span> <span>고비용 인프라 (전용 서버)</span> </li> <li class="flex items-start"> <span class="text-red-600 mr-2">•</span> <span>중앙 집중형 장애 위험</span> </li> <li class="flex items-start"> <span class="text-red-600 mr-2">•</span> <span>확장성 제한</span> </li> </ul> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-4 text-center">EdgeX 엣지 컴퓨팅 기반 AI 서비스</h3> <div class="space-y-4"> <div class="bg-blue-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">1</div> <div class="ml-5"> <h4 class="font-semibold">사용자 요청</h4> <p class="text-sm">사용자가 AI 서비스(이미지 생성, 텍스트 분석 등)를 요청</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-blue-200"></div> </div> <div class="bg-blue-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">2</div> <div class="ml-5"> <h4 class="font-semibold">지역 기반 라우팅</h4> <p class="text-sm">가장 가까운 지역의 EdgeX 노드로 요청 자동 라우팅 (낮은 지연)</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-blue-200"></div> </div> <div class="bg-blue-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">3</div> <div class="ml-5"> <h4 class="font-semibold">분산 네트워크에서 처리</h4> <p class="text-sm">가까운 PC방의 유휴 GPU에서 분산 처리 (저비용, 고효율)</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-blue-200"></div> </div> <div class="bg-blue-50 p-4 rounded-lg relative"> <div class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">4</div> <div class="ml-5"> <h4 class="font-semibold">신속한 결과 반환</h4> <p class="text-sm">물리적으로 가까운 거리에서 신속하게 결과 전달</p> </div> </div> </div> <div class="mt-6 bg-green-50 p-4 rounded-lg"> <h4 class="font-semibold text-green-700">주요 장점</h4> <ul class="space-y-1 text-sm"> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>낮은 지연 시간 (30-70ms)</span> </li> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>30-50% 낮은 비용</span> </li> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>분산형 장애 대응 능력</span> </li> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>유연한 확장성</span> </li> </ul> </div> </div> </div> </div> <div class="mb-16 bg-gray-50 p-8 rounded-lg"> <h2 class="text-2xl font-semibold mb-6 text-center">EdgeX AI 서비스 처리 워크플로우 상세</h2> <div class="space-y-6"> <div class="bg-white p-6 rounded-lg shadow-sm"> <div class="grid md:grid-cols-4 gap-4"> <div class="md:col-span-1"> <div class="bg-blue-600 text-white p-3 rounded-lg text-center"> <h3 class="font-semibold">1. 요청 수신</h3> </div> </div> <div class="md:col-span-3"> <h4 class="font-semibold mb-2">API 게이트웨이 처리</h4> <p class="text-sm mb-3">
+사용자의 서비스 요청이 EdgeX API 게이트웨이에 도달하면, 요청 유효성 검사 및
+                                사용자 인증이 진행됩니다. 이 과정에서 요청 형식, 접근 권한, 토큰 잔액 등을 확인합니다.
+</p> <div class="grid grid-cols-2 gap-3"> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">처리 단계:</span> 사용자 인증 → 요청 검증 → 라우팅 준비
+</div> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">소요 시간:</span> 5-10ms
+</div> </div> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <div class="grid md:grid-cols-4 gap-4"> <div class="md:col-span-1"> <div class="bg-blue-600 text-white p-3 rounded-lg text-center"> <h3 class="font-semibold">2. 워크로드 분석</h3> </div> </div> <div class="md:col-span-3"> <h4 class="font-semibold mb-2">서비스 요구사항 분석</h4> <p class="text-sm mb-3">
+요청된 AI 서비스의 유형(이미지 생성, 텍스트 분석, 음성 처리 등)과 규모에 따라
+                                필요한 컴퓨팅 자원량과 특성을 분석합니다. 이 단계에서 최적의 실행 계획이 수립됩니다.
+</p> <div class="grid grid-cols-2 gap-3"> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">처리 단계:</span> 서비스 유형 분류 → 리소스 요구량 계산 → 우선순위 설정
+</div> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">소요 시간:</span> 10-15ms
+</div> </div> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <div class="grid md:grid-cols-4 gap-4"> <div class="md:col-span-1"> <div class="bg-blue-600 text-white p-3 rounded-lg text-center"> <h3 class="font-semibold">3. 노드 선택</h3> </div> </div> <div class="md:col-span-3"> <h4 class="font-semibold mb-2">최적 엣지 노드 할당</h4> <p class="text-sm mb-3">
+지능형 노드 선택 알고리즘이 사용자 위치, 현재 네트워크 상태, 가용 자원을 고려하여
+                                최적의 PC방 노드를 선택합니다. 이때 지연 시간, 자원 가용성, 비용 등이 종합적으로 고려됩니다.
+</p> <div class="grid grid-cols-2 gap-3"> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">처리 단계:</span> 지리적 근접성 분석 → 자원 가용성 확인 → 최적 노드 선택
+</div> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">소요 시간:</span> 5-10ms
+</div> </div> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <div class="grid md:grid-cols-4 gap-4"> <div class="md:col-span-1"> <div class="bg-blue-600 text-white p-3 rounded-lg text-center"> <h3 class="font-semibold">4. 작업 분배</h3> </div> </div> <div class="md:col-span-3"> <h4 class="font-semibold mb-2">워크로드 분배 및 실행</h4> <p class="text-sm mb-3">
+요청이 선택된 엣지 노드(PC방 XR7 디바이스)로 전송되고, 해당 노드에서
+                                AI 작업을 실행합니다. 대규모 작업의 경우 여러 노드에 분산 처리될 수 있습니다.
+</p> <div class="grid grid-cols-2 gap-3"> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">처리 단계:</span> 요청 전송 → 자원 할당 → AI 모델 로드 → 연산 실행
+</div> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">소요 시간:</span> 서비스에 따라 다름 (10ms-수초)
+</div> </div> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <div class="grid md:grid-cols-4 gap-4"> <div class="md:col-span-1"> <div class="bg-blue-600 text-white p-3 rounded-lg text-center"> <h3 class="font-semibold">5. 결과 처리</h3> </div> </div> <div class="md:col-span-3"> <h4 class="font-semibold mb-2">결과 취합 및 최적화</h4> <p class="text-sm mb-3">
+AI 작업 완료 후 결과를 수집하고, 필요시 후처리를 진행합니다.
+                                분산 처리된 경우 여러 노드의 결과를 취합하여 최종 결과를 생성합니다.
+</p> <div class="grid grid-cols-2 gap-3"> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">처리 단계:</span> 결과 수집 → 품질 검증 → 후처리 → 최적화
+</div> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">소요 시간:</span> 5-20ms
+</div> </div> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <div class="grid md:grid-cols-4 gap-4"> <div class="md:col-span-1"> <div class="bg-blue-600 text-white p-3 rounded-lg text-center"> <h3 class="font-semibold">6. 응답 전송</h3> </div> </div> <div class="md:col-span-3"> <h4 class="font-semibold mb-2">사용자에게 결과 반환</h4> <p class="text-sm mb-3">
+최종 처리된 결과를 사용자에게 전송합니다. 이 과정에서 토큰 결제가 처리되고,
+                                서비스 이용 기록이 블록체인에 안전하게 저장됩니다.
+</p> <div class="grid grid-cols-2 gap-3"> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">처리 단계:</span> 토큰 결제 처리 → 결과 전송 → 이용 기록 저장
+</div> <div class="bg-gray-50 p-2 rounded text-xs"> <span class="font-semibold">소요 시간:</span> 5-10ms
+</div> </div> </div> </div> </div> <div class="bg-blue-50 p-4 rounded-lg"> <p class="text-center font-semibold">전체 처리 시간: 평균 30-70ms (기존 클라우드 대비 50-70% 단축)</p> </div> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">주요 AI 서비스 유형별 흐름</h2> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-blue-600 text-3xl mb-4">🖼️</div> <h3 class="text-xl font-semibold mb-3">이미지 생성 서비스</h3> <p class="mb-3 text-sm">
+텍스트 프롬프트를 바탕으로 AI가 새로운 이미지를 생성하는 서비스
+</p> <div class="space-y-2"> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">처리 흐름</p> <ol class="text-xs space-y-1 mt-1"> <li>1. 텍스트 프롬프트 분석 및 최적화</li> <li>2. 적합한 이미지 생성 모델 선택</li> <li>3. 고성능 GPU 노드에 작업 할당</li> <li>4. 분산 추론 처리 (필요시)</li> <li>5. 이미지 품질 개선 및 최적화</li> <li>6. 결과 이미지 전송</li> </ol> </div> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">성능 지표</p> <ul class="text-xs space-y-1 mt-1"> <li>• 평균 처리 시간: 1-3초</li> <li>• 기존 대비 속도: 30% 향상</li> <li>• 비용 절감: 약 40%</li> </ul> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-green-600 text-3xl mb-4">📝</div> <h3 class="text-xl font-semibold mb-3">텍스트 생성/분석</h3> <p class="mb-3 text-sm">
+자연어 처리를 통한 텍스트 생성, 요약, 번역, 감정 분석 등의 서비스
+</p> <div class="space-y-2"> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">처리 흐름</p> <ol class="text-xs space-y-1 mt-1"> <li>1. 입력 텍스트 전처리 및 토큰화</li> <li>2. 언어 모델 선택 및 로드</li> <li>3. 분산 또는 단일 노드 처리</li> <li>4. 컨텍스트 유지 및 일관성 확보</li> <li>5. 결과 텍스트 후처리</li> <li>6. 최종 결과 전송</li> </ol> </div> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">성능 지표</p> <ul class="text-xs space-y-1 mt-1"> <li>• 평균 처리 시간: 50-300ms</li> <li>• 기존 대비 속도: 50% 향상</li> <li>• 비용 절감: 약 50%</li> </ul> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-purple-600 text-3xl mb-4">🔊</div> <h3 class="text-xl font-semibold mb-3">음성 처리 서비스</h3> <p class="mb-3 text-sm">
+음성 인식, 음성 합성, 실시간 번역 등의 오디오 처리 서비스
+</p> <div class="space-y-2"> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">처리 흐름</p> <ol class="text-xs space-y-1 mt-1"> <li>1. 오디오 입력 신호 처리</li> <li>2. 음성 특성 추출 및 분석</li> <li>3. 실시간 스트리밍 처리</li> <li>4. 언어 모델과 연계 처리</li> <li>5. 결과 최적화 (음질, 명료도)</li> <li>6. 결과 전송 (스트리밍 또는 파일)</li> </ol> </div> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">성능 지표</p> <ul class="text-xs space-y-1 mt-1"> <li>• 평균 처리 시간: 실시간 (20-50ms 지연)</li> <li>• 기존 대비 속도: 60% 향상</li> <li>• 비용 절감: 약 35%</li> </ul> </div> </div> </div> </div> <div class="grid md:grid-cols-2 gap-6 mt-6"> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-yellow-600 text-3xl mb-4">📊</div> <h3 class="text-xl font-semibold mb-3">데이터 분석 서비스</h3> <p class="mb-3 text-sm">
+대용량 데이터 분석, 예측 모델링, 패턴 인식 등의 데이터 과학 서비스
+</p> <div class="space-y-2"> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">처리 흐름</p> <ol class="text-xs space-y-1 mt-1"> <li>1. 데이터 수집 및 전처리</li> <li>2. 분산 노드를 통한 병렬 처리</li> <li>3. 모델 학습 또는 추론 실행</li> <li>4. 데이터 집계 및 통계 분석</li> <li>5. 시각화 데이터 생성</li> <li>6. 결과 전송 및 저장</li> </ol> </div> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">성능 지표</p> <ul class="text-xs space-y-1 mt-1"> <li>• 평균 처리 시간: 작업 규모에 따라 다양</li> <li>• 기존 대비 속도: 대규모 작업 40% 향상</li> <li>• 비용 절감: 약 45-55%</li> </ul> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-red-600 text-3xl mb-4">🎮</div> <h3 class="text-xl font-semibold mb-3">실시간 렌더링/게임 AI</h3> <p class="mb-3 text-sm">
+실시간 그래픽 렌더링, 게임 AI, 가상 환경 시뮬레이션 등의 서비스
+</p> <div class="space-y-2"> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">처리 흐름</p> <ol class="text-xs space-y-1 mt-1"> <li>1. 지연 시간 최소화를 위한 초근접 노드 선택</li> <li>2. 실시간 렌더링 또는 AI 처리</li> <li>3. 사용자 입력에 즉각적인 반응</li> <li>4. 상태 동기화 및 일관성 유지</li> <li>5. 지속적인 스트리밍 처리</li> <li>6. 최소 지연으로 결과 전송</li> </ol> </div> <div class="bg-gray-50 p-2 rounded"> <p class="text-xs font-semibold">성능 지표</p> <ul class="text-xs space-y-1 mt-1"> <li>• 평균 처리 시간: 초저지연 (10-30ms)</li> <li>• 기존 대비 속도: 70% 향상</li> <li>• 비용 절감: 약 30%</li> </ul> </div> </div> </div> </div> </div> <div class="mb-16 bg-gray-50 p-8 rounded-lg"> <h2 class="text-2xl font-semibold mb-6 text-center">개발자를 위한 워크플로우</h2> <div class="space-y-6"> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-xl font-semibold mb-3">1. EdgeX 개발자 계정 등록</h3> <p class="mb-3 text-sm">
+개발자 포털에서 계정을 생성하고 API 키를 발급받습니다. 이 과정에서 개발자 신원 확인 및
+                        기본 크레딧이 제공됩니다.
+</p> <div class="bg-blue-50 p-3 rounded text-sm"> <p class="font-semibold">제공 도구:</p> <ul class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-1"> <li class="bg-white p-2 rounded text-xs">개발자 대시보드</li> <li class="bg-white p-2 rounded text-xs">API 문서</li> <li class="bg-white p-2 rounded text-xs">SDK 패키지</li> <li class="bg-white p-2 rounded text-xs">샘플 코드</li> </ul> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-xl font-semibold mb-3">2. 서비스 개발 및 테스트</h3> <p class="mb-3 text-sm">
+EdgeX SDK를 활용하여 AI 서비스를 개발하고, 개발자 환경에서 테스트합니다.
+                        지원되는 다양한 AI 프레임워크와 모델을 활용할 수 있습니다.
+</p> <div class="bg-blue-50 p-3 rounded text-sm"> <p class="font-semibold">지원 프레임워크:</p> <ul class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-1"> <li class="bg-white p-2 rounded text-xs">TensorFlow</li> <li class="bg-white p-2 rounded text-xs">PyTorch</li> <li class="bg-white p-2 rounded text-xs">ONNX</li> <li class="bg-white p-2 rounded text-xs">Hugging Face</li> </ul> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-xl font-semibold mb-3">3. 서비스 최적화 및 배포</h3> <p class="mb-3 text-sm">
+개발된 AI 서비스를 EdgeX 엣지 환경에 최적화하고, 배포 도구를 통해 네트워크에 배포합니다.
+                        이 과정에서 자동 스케일링 및 분산 처리 설정이 가능합니다.
+</p> <div class="bg-blue-50 p-3 rounded text-sm"> <p class="font-semibold">최적화 도구:</p> <ul class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-1"> <li class="bg-white p-2 rounded text-xs">모델 경량화</li> <li class="bg-white p-2 rounded text-xs">양자화</li> <li class="bg-white p-2 rounded text-xs">분산 처리 설정</li> <li class="bg-white p-2 rounded text-xs">자동 스케일링</li> </ul> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-xl font-semibold mb-3">4. 서비스 모니터링 및 관리</h3> <p class="mb-3 text-sm">
+배포된 서비스의 성능, 사용량, 수익을 실시간으로 모니터링하고 관리합니다.
+                        분석 도구를 통해 서비스 개선 포인트를 파악할 수 있습니다.
+</p> <div class="bg-blue-50 p-3 rounded text-sm"> <p class="font-semibold">관리 기능:</p> <ul class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-1"> <li class="bg-white p-2 rounded text-xs">실시간 대시보드</li> <li class="bg-white p-2 rounded text-xs">사용량 분석</li> <li class="bg-white p-2 rounded text-xs">성능 모니터링</li> <li class="bg-white p-2 rounded text-xs">수익 분석</li> </ul> </div> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-xl font-semibold mb-3">5. 수익화 및 확장</h3> <p class="mb-3 text-sm">
+마켓플레이스를 통해 서비스를 판매하거나, API 형태로 제공하여 수익을 창출합니다.
+                        사용자 피드백을 바탕으로 서비스를 지속적으로 개선하고 확장할 수 있습니다.
+</p> <div class="bg-blue-50 p-3 rounded text-sm"> <p class="font-semibold">수익 모델:</p> <ul class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-1"> <li class="bg-white p-2 rounded text-xs">사용량 기반</li> <li class="bg-white p-2 rounded text-xs">구독형</li> <li class="bg-white p-2 rounded text-xs">프리미엄 기능</li> <li class="bg-white p-2 rounded text-xs">API 라이센싱</li> </ul> </div> </div> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">EdgeX 서비스 이용 방법</h2> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-3">1. 계정 생성 및 토큰 획득</h3> <p class="mb-4 text-sm">
+EdgeX 플랫폼에 사용자 계정을 생성하고, 서비스 이용을 위한 
+                        EdgeX 토큰(EXT)을 획득합니다.
+</p> <ul class="text-sm space-y-2"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>웹사이트 또는 앱에서 회원가입</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>토큰 구매 또는 신규 사용자 보너스</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>지갑 설정 및 토큰 충전</span> </li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-3">2. 서비스 탐색 및 선택</h3> <p class="mb-4 text-sm">
+마켓플레이스에서 다양한 AI 서비스를 검색하고 자신에게 
+                        필요한 서비스를 선택합니다.
+</p> <ul class="text-sm space-y-2"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>카테고리별 서비스 탐색</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>사용자 리뷰 및 평점 확인</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>무료 체험판 테스트</span> </li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-3">3. 서비스 이용 및 결제</h3> <p class="mb-4 text-sm">
+선택한 서비스를 이용하고, 사용량에 따라 자동으로 
+                        토큰이 지불됩니다.
+</p> <ul class="text-sm space-y-2"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>웹 인터페이스 또는 API 연동</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>자동 토큰 결제 시스템</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>사용량 및 비용 실시간 모니터링</span> </li> </ul> </div> </div> <div class="mt-8 bg-blue-50 p-6 rounded-lg"> <h3 class="text-xl font-semibold mb-4 text-center">이용 가능한 접근 방식</h3> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white p-4 rounded shadow-sm"> <h4 class="font-semibold mb-2">웹 인터페이스</h4> <p class="text-sm">
+브라우저를 통해 직관적인 웹 인터페이스에서 AI 서비스를 쉽게 이용할 수 있습니다.
+                            별도의 기술 지식 없이도 누구나 쉽게 사용 가능합니다.
+</p> </div> <div class="bg-white p-4 rounded shadow-sm"> <h4 class="font-semibold mb-2">모바일 앱</h4> <p class="text-sm">
+Android 및 iOS 앱을 통해 모바일 환경에서도 동일한 AI 서비스를 이용할 수 있습니다.
+                            언제 어디서나 편리하게 접근 가능합니다.
+</p> </div> <div class="bg-white p-4 rounded shadow-sm"> <h4 class="font-semibold mb-2">API 통합</h4> <p class="text-sm">
+개발자는 REST API를 통해 자신의 애플리케이션에 EdgeX AI 기능을 통합할 수 있습니다.
+                            다양한 언어의 SDK와 상세 문서를 제공합니다.
+</p> </div> </div> </div> </div> <div class="mt-12 text-center flex justify-between"> <a href="/ecosystem/token" class="inline-block bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition">
+← 토큰 경제
+</a> <a href="/contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+EdgeX 소개 문의하기 →
+</a> </div> </div>  <!-- 모바일 하단 네비게이션 --> <nav class="bottom-nav"> <ul class="nav-list"> <li class="nav-item"> <a href="#intro" class="nav-link active"> <i class="fas fa-info-circle"></i> <span>소개</span> </a> </li> <li class="nav-item"> <a href="#benefits" class="nav-link"> <i class="fas fa-chart-line"></i> <span>효과</span> </a> </li> <li class="nav-item"> <a href="#infra" class="nav-link"> <i class="fas fa-server"></i> <span>인프라</span> </a> </li> <li class="nav-item"> <a href="#rewards" class="nav-link"> <i class="fas fa-coins"></i> <span>보상</span> </a> </li> </ul> </nav> <script>
+    // 스크롤 시 섹션 애니메이션
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      
+      // 초기 로드 시 화면에 보이는 섹션들 표시
+      sections.forEach(section => {
+        if (isElementInViewport(section)) {
+          section.classList.add('animate-on-scroll');
+        }
+      });
+      
+      // 스크롤 이벤트 - 디바운스 처리 추가
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+          window.cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = window.requestAnimationFrame(function() {
+          sections.forEach(section => {
+            if (isElementInViewport(section) && !section.classList.contains('animate-on-scroll')) {
+              section.classList.add('animate-on-scroll');
+            }
+          });
+          
+          // 모바일 네비게이션 활성화 상태 업데이트
+          updateActiveNavLink();
+        });
+      });
+      
+      // 모바일 네비게이션 링크 클릭 이벤트
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // 첫 로드시 활성화 상태 설정
+      updateActiveNavLink();
+    });
+    
+    // 요소가 뷰포트에 있는지 확인하는 함수
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+      );
+    }
+    
+    // 현재 보이는 섹션에 따라 네비게이션 활성화 상태 업데이트
+    function updateActiveNavLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSectionId = '';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+          currentSectionId = section.id;
+        }
+      });
+      
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }
+  </script> <footer data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-logo" data-astro-cid-sz7xmlte> <div class="logo-wrapper" data-astro-cid-sz7xmlte> <span class="logo-text" data-astro-cid-sz7xmlte>EdgeX</span> </div> <p class="tagline" data-astro-cid-sz7xmlte>분산형 AI 인프라를 구축하는 Web3 기반 엣지 컴퓨팅 솔루션</p> </div> <div class="footer-links" data-astro-cid-sz7xmlte> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>프로젝트 정보</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/EdgeX/about" data-astro-cid-sz7xmlte>EdgeX 소개</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/overview" data-astro-cid-sz7xmlte>도입 효과</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/rewards" data-astro-cid-sz7xmlte>보상 구조</a></li> </ul> </div> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>소셜 미디어</h4> <div class="social-icons" data-astro-cid-sz7xmlte> <a href="https://github.com/yourusername/EdgeX" target="_blank" aria-label="GitHub" data-astro-cid-sz7xmlte> <i class="fab fa-github" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Discord" data-astro-cid-sz7xmlte> <i class="fab fa-discord" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Twitter" data-astro-cid-sz7xmlte> <i class="fab fa-twitter" data-astro-cid-sz7xmlte></i> </a> </div> </div> </div> </div> <div class="footer-bottom" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy; 2025 EdgeX Project. 모든 권리 보유.</p> <p data-astro-cid-sz7xmlte>문의: <a href="mailto:info@edgex.io" data-astro-cid-sz7xmlte>info@edgex.io</a></p> </div> </div> </footer>  </body></html>

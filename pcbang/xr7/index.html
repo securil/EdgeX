@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="EdgeX는 분산형 AI 인프라를 구축하는 Web3 기반의 엣지 컴퓨팅 프로젝트입니다. PC방을 위한 도입 제안서입니다."><meta name="keywords" content="EdgeX, Web3, 엣지 컴퓨팅, AI 인프라, PC방, 분산형"><title>XR7 디바이스 | EdgeX</title><!-- 폰트 최적화: preconnect와 preload 사용 --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'"><!-- 아이콘 폰트 지연 로드 --><link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'"><!-- 폰트가 로드되지 않았을 때를 위한 대체 스타일 --><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"><script>
+    // Base URL 전역 변수 설정
+    window.BASE_URL = '${import.meta.env.BASE_URL}';
+    console.log("BASE_URL는:", window.BASE_URL);
+    
+    // 경로 생성 유틸리티 함수
+    window.getPath = function(path) {
+      // 경로가 슬래시로 시작하는지 확인하고 없으면 추가
+      const formattedPath = path.startsWith('/') ? path : `/${path}`;
+      return window.BASE_URL + formattedPath;
+    };
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOM이 로드되었습니다");
+    });
+  </script><link rel="stylesheet" href="/EdgeX/_assets/index.X5qw8zEV.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container" data-astro-cid-3ef6ksr2> <div class="logo" data-astro-cid-3ef6ksr2> <a href="/EdgeX/" data-astro-cid-3ef6ksr2> <span class="logo-text" data-astro-cid-3ef6ksr2>EdgeX</span> <img src="/EdgeX/image/EdgeX-logo.png" alt="EdgeX Logo" class="logo-image" data-astro-cid-3ef6ksr2> <span class="logo-badge" data-astro-cid-3ef6ksr2>피씨방</span> </a> </div> <nav class="main-nav" data-astro-cid-3ef6ksr2> <ul class="nav-list" data-astro-cid-3ef6ksr2> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/" data-astro-cid-3ef6ksr2>홈</a></li> <!-- 소개 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/about" data-astro-cid-3ef6ksr2>EdgeX 소개</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/overview" data-astro-cid-3ef6ksr2>프로젝트 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/innovation" data-astro-cid-3ef6ksr2>AI 인프라 혁신</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/comparison" data-astro-cid-3ef6ksr2>경쟁사 비교</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/roadmap" data-astro-cid-3ef6ksr2>로드맵</a></li> </ul> </li> <!-- PC방 제안 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/pcbang" data-astro-cid-3ef6ksr2>PC방 제안</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/overview" data-astro-cid-3ef6ksr2>위탁관리 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/xr7" data-astro-cid-3ef6ksr2>XR7 디바이스</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/rewards" data-astro-cid-3ef6ksr2>보상 구조</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/income-calculator" data-astro-cid-3ef6ksr2>수익 계산기</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/participation" data-astro-cid-3ef6ksr2>참여 방법</a></li> </ul> </li> <!-- 생태계 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/ecosystem" data-astro-cid-3ef6ksr2>생태계</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/structure" data-astro-cid-3ef6ksr2>구조 및 역할</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/token" data-astro-cid-3ef6ksr2>토큰 경제</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/workflow" data-astro-cid-3ef6ksr2>서비스 흐름도</a></li> </ul> </li> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/contact" data-astro-cid-3ef6ksr2>문의하기</a></li> </ul> </nav> <button class="mobile-toggle" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> </button> </div> </header>  <script type="module">document.addEventListener("DOMContentLoaded",function(){const i=document.querySelector(".mobile-toggle"),c=document.querySelector(".main-nav"),t=document.querySelectorAll(".nav-item.dropdown");i&&c&&i.addEventListener("click",function(){i.classList.toggle("active"),c.classList.toggle("active"),c.classList.contains("active")||t.forEach(e=>e.classList.remove("active"))}),t.forEach(e=>{e.querySelector("a").addEventListener("click",function(n){window.innerWidth<=768&&(n.preventDefault(),t.forEach(s=>{s!==e&&s.classList.remove("active")}),e.classList.toggle("active"))})}),window.addEventListener("resize",function(){window.innerWidth>768&&(c.classList.remove("active"),i.classList.remove("active"),t.forEach(e=>e.classList.remove("active")))}),window.addEventListener("scroll",function(){const e=document.querySelector(".site-header");window.scrollY>75?e.classList.add("scrolled"):e.classList.remove("scrolled")}),window.innerWidth<=768&&t.forEach(e=>{e.classList.add("mobile")})});</script>  <div class="container mx-auto px-4 py-12"> <div class="mb-12 text-center"> <h1 class="text-4xl font-bold mb-4">XR7 엣지 컴퓨팅 디바이스</h1> <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+PC방 GPU 자원을 엣지 컴퓨팅 네트워크에 연결하는 핵심 기술
+</p> </div> <div class="grid md:grid-cols-2 gap-12 mb-16 items-center"> <div> <h2 class="text-2xl font-semibold mb-4">XR7 디바이스란?</h2> <p class="mb-4">
+XR7은 PC방의 고성능 GPU 자원을 EdgeX 엣지 컴퓨팅 네트워크에 안전하게 연결하기 위해
+                    특별히 개발된 하드웨어 디바이스입니다. 컴팩트한 크기와 강력한 성능을 갖춘 XR7은
+                    PC방 내 유휴 컴퓨팅 자원을 효율적으로 활용하는 핵심 인프라 요소입니다.
+</p> <p class="mb-4">
+각 XR7 디바이스는 최대 10대의 PC를 모니터링하고 관리할 수 있으며, 자원의 효율적인
+                    분배와 보안 연결을 담당합니다. 또한 실시간 자원 모니터링과 최적화된 워크로드 분배를
+                    통해 PC 하드웨어에 무리를 주지 않고 안정적인 성능을 보장합니다.
+</p> </div> <div class="bg-gray-100 p-6 rounded-lg"> <h3 class="text-xl font-semibold mb-4 text-center">XR7 디바이스 개요</h3> <ul class="space-y-3"> <li class="flex items-start"> <span class="text-blue-600 mr-2 font-bold">•</span> <div> <span class="font-semibold">설치 위치:</span> <span> PC방 서버룸 또는 관리자 데스크 인근</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2 font-bold">•</span> <div> <span class="font-semibold">크기:</span> <span> 190mm × 120mm × 40mm (소형 라우터 크기)</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2 font-bold">•</span> <div> <span class="font-semibold">전력 소비:</span> <span> 최대 15W (일반 LED 전구 수준)</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2 font-bold">•</span> <div> <span class="font-semibold">관리 용량:</span> <span> 최대 10대의 PC 관리 (규모에 따라 여러 대 설치)</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2 font-bold">•</span> <div> <span class="font-semibold">네트워크 연결:</span> <span> 기가비트 이더넷, 보안 VPN 연결</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2 font-bold">•</span> <div> <span class="font-semibold">유지보수:</span> <span> 무상 관리 및 필요시 즉시 교체</span> </div> </li> </ul> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">XR7의 핵심 기능</h2> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500"> <div class="text-blue-600 text-3xl mb-4">🔄</div> <h3 class="text-xl font-semibold mb-3">지능형 자원 관리</h3> <p class="mb-3">
+PC의 사용 상태를 실시간으로 모니터링하여 유휴 상태일 때만 자원을 활용합니다.
+                        사용자가 PC를 사용하기 시작하면 즉시 모든 자원을 정상적으로 반환합니다.
+</p> <ul class="text-sm space-y-1"> <li>• 자동 유휴 감지 및 활용</li> <li>• 우선순위 기반 자원 관리</li> <li>• 지능형 부하 분산</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500"> <div class="text-blue-600 text-3xl mb-4">🛡️</div> <h3 class="text-xl font-semibold mb-3">보안 네트워크</h3> <p class="mb-3">
+독립적인 보안 네트워크를 통해 PC방의 일반 네트워크와 완전히 분리된 안전한
+                        데이터 통신을 제공합니다. 모든 데이터는 고급 암호화로 보호됩니다.
+</p> <ul class="text-sm space-y-1"> <li>• 종단간 데이터 암호화</li> <li>• 독립 VPN 연결</li> <li>• 고급 침입 감지 시스템</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500"> <div class="text-blue-600 text-3xl mb-4">📊</div> <h3 class="text-xl font-semibold mb-3">성능 최적화</h3> <p class="mb-3">
+PC의 온도와 성능을 지속적으로 모니터링하고 최적의 부하 수준을 유지하여
+                        하드웨어 안전성을 보장합니다. 과부하 방지 알고리즘이 내장되어 있습니다.
+</p> <ul class="text-sm space-y-1"> <li>• 실시간 온도 모니터링</li> <li>• 지능형 성능 조절</li> <li>• 하드웨어 보호 메커니즘</li> </ul> </div> </div> <div class="grid md:grid-cols-3 gap-6 mt-6"> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500"> <div class="text-blue-600 text-3xl mb-4">💸</div> <h3 class="text-xl font-semibold mb-3">정확한 보상 측정</h3> <p class="mb-3">
+제공된 컴퓨팅 자원량을 정확히 측정하고 기록하여 투명한 보상 시스템의
+                        기반을 제공합니다. 모든 작업 기록은 블록체인에 안전하게 저장됩니다.
+</p> <ul class="text-sm space-y-1"> <li>• 정밀한 자원 측정</li> <li>• 블록체인 기반 작업 기록</li> <li>• 투명한 보상 계산</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500"> <div class="text-blue-600 text-3xl mb-4">🔌</div> <h3 class="text-xl font-semibold mb-3">원격 관리</h3> <p class="mb-3">
+EdgeX 관리 시스템과 연동되어 원격으로 모니터링 및 관리가 가능합니다.
+                        문제 발생 시 자동으로 감지하고 원격으로 문제를 해결합니다.
+</p> <ul class="text-sm space-y-1"> <li>• 원격 상태 모니터링</li> <li>• 자동 문제 감지 및 해결</li> <li>• OTA 업데이트 지원</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500"> <div class="text-blue-600 text-3xl mb-4">🧠</div> <h3 class="text-xl font-semibold mb-3">AI 워크로드 관리</h3> <p class="mb-3">
+다양한 AI 워크로드를 효율적으로 처리하기 위한 전문 알고리즘이 탑재되어 있습니다.
+                        각 PC의 성능에 맞게 최적화된 작업을 배분합니다.
+</p> <ul class="text-sm space-y-1"> <li>• AI 모델별 최적화</li> <li>• 워크로드 분배 알고리즘</li> <li>• 자동 성능 튜닝</li> </ul> </div> </div> </div> <div class="mb-16 bg-gray-50 p-8 rounded-lg"> <h2 class="text-2xl font-semibold mb-6 text-center">XR7 설치 및 운영 과정</h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> <div class="bg-white p-5 rounded-lg shadow-sm relative"> <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">1</div> <h3 class="text-lg font-semibold mb-3 pr-8">설치 전 현장 평가</h3> <p class="text-sm mb-3">
+EdgeX 기술팀이 PC방을 방문하여 네트워크 환경과 PC 구성을 분석합니다.
+                        최적의 설치 위치와 필요한 XR7 디바이스 수량을 결정합니다.
+</p> <p class="text-xs text-gray-500">소요 시간: 약 2시간</p> </div> <div class="bg-white p-5 rounded-lg shadow-sm relative"> <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">2</div> <h3 class="text-lg font-semibold mb-3 pr-8">XR7 설치</h3> <p class="text-sm mb-3">
+XR7 디바이스를 서버룸 또는 관리자 데스크 인근에 설치하고 네트워크에 연결합니다.
+                        PC 관리 소프트웨어를 각 PC에 설치합니다.
+</p> <p class="text-xs text-gray-500">소요 시간: 약 4시간</p> </div> <div class="bg-white p-5 rounded-lg shadow-sm relative"> <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">3</div> <h3 class="text-lg font-semibold mb-3 pr-8">시스템 설정 및 테스트</h3> <p class="text-sm mb-3">
+각 PC의 성능 최적화 설정을 진행하고 전체 시스템을 테스트합니다.
+                        PC방 운영 환경과의 충돌 여부를 확인하고 필요시 조정합니다.
+</p> <p class="text-xs text-gray-500">소요 시간: 약 2시간</p> </div> <div class="bg-white p-5 rounded-lg shadow-sm relative"> <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">4</div> <h3 class="text-lg font-semibold mb-3 pr-8">운영 시작 및 모니터링</h3> <p class="text-sm mb-3">
+시스템 가동을 시작하고 초기 2주 동안 집중 모니터링을 진행합니다.
+                        필요시 원격으로 미세 조정을 실시하여 최적의 성능을 확보합니다.
+</p> <p class="text-xs text-gray-500">모니터링: 24시간/365일</p> </div> </div> <div class="mt-8 bg-blue-50 p-5 rounded-lg"> <h3 class="text-lg font-semibold mb-3">XR7 유지보수 정책</h3> <ul class="space-y-2"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>계약 기간 동안 무상 유지보수 및 필요시 교체 제공</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>원격 모니터링을 통한 문제 예방 및 자동 업데이트</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>문제 발생 시 24시간 이내 현장 방문 지원</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>3개월마다 정기 점검 및 성능 최적화</span> </li> </ul> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">XR7 디바이스 기술 사양</h2> <div class="overflow-x-auto"> <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md"> <thead> <tr class="bg-gray-100"> <th class="py-3 px-4 text-left border-b">항목</th> <th class="py-3 px-4 text-left border-b">사양</th> <th class="py-3 px-4 text-left border-b">설명</th> </tr> </thead> <tbody> <tr> <td class="py-3 px-4 border-b font-semibold">프로세서</td> <td class="py-3 px-4 border-b">ARM Cortex-A72 쿼드코어</td> <td class="py-3 px-4 border-b">저전력 고성능 프로세서</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">메모리</td> <td class="py-3 px-4 border-b">4GB LPDDR4</td> <td class="py-3 px-4 border-b">안정적인 다중 작업 처리</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">저장장치</td> <td class="py-3 px-4 border-b">32GB eMMC + microSD</td> <td class="py-3 px-4 border-b">OS 및 작업 로그 저장</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">네트워크</td> <td class="py-3 px-4 border-b">기가비트 이더넷 × 2</td> <td class="py-3 px-4 border-b">독립 네트워크 구성 가능</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">보안 모듈</td> <td class="py-3 px-4 border-b">하드웨어 보안 칩 내장</td> <td class="py-3 px-4 border-b">암호화 키 및 인증 관리</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">냉각 시스템</td> <td class="py-3 px-4 border-b">무소음 패시브 쿨링</td> <td class="py-3 px-4 border-b">팬 소음 없이 안정적 냉각</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">운영체제</td> <td class="py-3 px-4 border-b">EdgeX OS (리눅스 기반)</td> <td class="py-3 px-4 border-b">원격 관리 및 보안에 최적화</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">전원</td> <td class="py-3 px-4 border-b">12V DC, 최대 15W</td> <td class="py-3 px-4 border-b">에너지 효율적 설계</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">크기</td> <td class="py-3 px-4 border-b">190 × 120 × 40 mm</td> <td class="py-3 px-4 border-b">컴팩트한 소형 디자인</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">내구성</td> <td class="py-3 px-4 border-b">24/7 연속 작동 설계</td> <td class="py-3 px-4 border-b">MTBF 100,000시간 이상</td> </tr> </tbody> </table> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">XR7 자주 묻는 질문</h2> <div class="space-y-4"> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">XR7 디바이스의 설치 비용은 얼마인가요?</h3> <p>EdgeX 위탁관리 계약에 따라 XR7 디바이스는 무상으로 제공되며, 설치 및 유지보수 비용도 모두 EdgeX가 부담합니다. PC방은 별도의 초기 투자 비용이 없습니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">XR7 디바이스가 PC방 네트워크에 영향을 주나요?</h3> <p>XR7은 독립적인 네트워크 연결을 통해 작동하므로 PC방의 기존 네트워크 성능에 영향을 주지 않습니다. 필요한 경우 별도의 네트워크 회선을 설치하여 완전히 분리된 환경을 구성할 수도 있습니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">XR7 디바이스의 전력 소비는 어느 정도인가요?</h3> <p>XR7 디바이스는 최대 15W의 매우 낮은 전력을 소비합니다. 이는 일반 LED 전구 한 개와 비슷한 수준으로, PC방의 전체 전력 소비량에 미미한 영향만 미칩니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">XR7 디바이스가 고장나면 어떻게 되나요?</h3> <p>XR7 디바이스에 문제가 발생하면 원격 모니터링 시스템이 즉시 이를 감지하고 EdgeX 기술팀에 알립니다. 원격으로 해결할 수 없는 문제인 경우, 24시간 이내에 기술 지원팀이 방문하여 무상으로 수리 또는 교체해 드립니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">계약 종료 시 XR7 디바이스는 어떻게 처리되나요?</h3> <p>계약 종료 시 EdgeX 기술팀이 방문하여 XR7 디바이스를 수거합니다. 수거 과정에서 PC방 시스템에 영향이 없도록 모든 연결을 안전하게 제거하며, 설치 전 상태로 완벽하게 복원해 드립니다.</p> </div> </div> </div> <div class="text-center"> <h2 class="text-2xl font-semibold mb-6">더 알아보고 싶으신가요?</h2> <p class="mb-8 max-w-2xl mx-auto">
+XR7 디바이스에 대한 자세한 정보와 시연을 원하시면 EdgeX 기술팀의 방문 데모를 예약하세요.
+                귀하의 PC방 환경에 맞는 최적의 구성을 제안해 드립니다.
+</p> <div class="flex flex-col sm:flex-row gap-4 justify-center"> <a href="/pcbang/rewards" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition">
+보상 구조 알아보기
+</a> <a href="/contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+방문 데모 신청하기 →
+</a> </div> </div> </div>  <!-- 모바일 하단 네비게이션 --> <nav class="bottom-nav"> <ul class="nav-list"> <li class="nav-item"> <a href="#intro" class="nav-link active"> <i class="fas fa-info-circle"></i> <span>소개</span> </a> </li> <li class="nav-item"> <a href="#benefits" class="nav-link"> <i class="fas fa-chart-line"></i> <span>효과</span> </a> </li> <li class="nav-item"> <a href="#infra" class="nav-link"> <i class="fas fa-server"></i> <span>인프라</span> </a> </li> <li class="nav-item"> <a href="#rewards" class="nav-link"> <i class="fas fa-coins"></i> <span>보상</span> </a> </li> </ul> </nav> <script>
+    // 스크롤 시 섹션 애니메이션
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      
+      // 초기 로드 시 화면에 보이는 섹션들 표시
+      sections.forEach(section => {
+        if (isElementInViewport(section)) {
+          section.classList.add('animate-on-scroll');
+        }
+      });
+      
+      // 스크롤 이벤트 - 디바운스 처리 추가
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+          window.cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = window.requestAnimationFrame(function() {
+          sections.forEach(section => {
+            if (isElementInViewport(section) && !section.classList.contains('animate-on-scroll')) {
+              section.classList.add('animate-on-scroll');
+            }
+          });
+          
+          // 모바일 네비게이션 활성화 상태 업데이트
+          updateActiveNavLink();
+        });
+      });
+      
+      // 모바일 네비게이션 링크 클릭 이벤트
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // 첫 로드시 활성화 상태 설정
+      updateActiveNavLink();
+    });
+    
+    // 요소가 뷰포트에 있는지 확인하는 함수
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+      );
+    }
+    
+    // 현재 보이는 섹션에 따라 네비게이션 활성화 상태 업데이트
+    function updateActiveNavLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSectionId = '';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+          currentSectionId = section.id;
+        }
+      });
+      
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }
+  </script> <footer data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-logo" data-astro-cid-sz7xmlte> <div class="logo-wrapper" data-astro-cid-sz7xmlte> <span class="logo-text" data-astro-cid-sz7xmlte>EdgeX</span> </div> <p class="tagline" data-astro-cid-sz7xmlte>분산형 AI 인프라를 구축하는 Web3 기반 엣지 컴퓨팅 솔루션</p> </div> <div class="footer-links" data-astro-cid-sz7xmlte> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>프로젝트 정보</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/EdgeX/about" data-astro-cid-sz7xmlte>EdgeX 소개</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/overview" data-astro-cid-sz7xmlte>도입 효과</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/rewards" data-astro-cid-sz7xmlte>보상 구조</a></li> </ul> </div> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>소셜 미디어</h4> <div class="social-icons" data-astro-cid-sz7xmlte> <a href="https://github.com/yourusername/EdgeX" target="_blank" aria-label="GitHub" data-astro-cid-sz7xmlte> <i class="fab fa-github" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Discord" data-astro-cid-sz7xmlte> <i class="fab fa-discord" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Twitter" data-astro-cid-sz7xmlte> <i class="fab fa-twitter" data-astro-cid-sz7xmlte></i> </a> </div> </div> </div> </div> <div class="footer-bottom" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy; 2025 EdgeX Project. 모든 권리 보유.</p> <p data-astro-cid-sz7xmlte>문의: <a href="mailto:info@edgex.io" data-astro-cid-sz7xmlte>info@edgex.io</a></p> </div> </div> </footer>  </body></html>

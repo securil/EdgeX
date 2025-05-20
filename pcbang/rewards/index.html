@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="EdgeX는 분산형 AI 인프라를 구축하는 Web3 기반의 엣지 컴퓨팅 프로젝트입니다. PC방을 위한 도입 제안서입니다."><meta name="keywords" content="EdgeX, Web3, 엣지 컴퓨팅, AI 인프라, PC방, 분산형"><title>보상 구조 | EdgeX</title><!-- 폰트 최적화: preconnect와 preload 사용 --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'"><!-- 아이콘 폰트 지연 로드 --><link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'"><!-- 폰트가 로드되지 않았을 때를 위한 대체 스타일 --><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"><script>
+    // Base URL 전역 변수 설정
+    window.BASE_URL = '${import.meta.env.BASE_URL}';
+    console.log("BASE_URL는:", window.BASE_URL);
+    
+    // 경로 생성 유틸리티 함수
+    window.getPath = function(path) {
+      // 경로가 슬래시로 시작하는지 확인하고 없으면 추가
+      const formattedPath = path.startsWith('/') ? path : `/${path}`;
+      return window.BASE_URL + formattedPath;
+    };
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOM이 로드되었습니다");
+    });
+  </script><link rel="stylesheet" href="/EdgeX/_assets/index.X5qw8zEV.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container" data-astro-cid-3ef6ksr2> <div class="logo" data-astro-cid-3ef6ksr2> <a href="/EdgeX/" data-astro-cid-3ef6ksr2> <span class="logo-text" data-astro-cid-3ef6ksr2>EdgeX</span> <img src="/EdgeX/image/EdgeX-logo.png" alt="EdgeX Logo" class="logo-image" data-astro-cid-3ef6ksr2> <span class="logo-badge" data-astro-cid-3ef6ksr2>피씨방</span> </a> </div> <nav class="main-nav" data-astro-cid-3ef6ksr2> <ul class="nav-list" data-astro-cid-3ef6ksr2> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/" data-astro-cid-3ef6ksr2>홈</a></li> <!-- 소개 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/about" data-astro-cid-3ef6ksr2>EdgeX 소개</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/overview" data-astro-cid-3ef6ksr2>프로젝트 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/innovation" data-astro-cid-3ef6ksr2>AI 인프라 혁신</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/comparison" data-astro-cid-3ef6ksr2>경쟁사 비교</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/roadmap" data-astro-cid-3ef6ksr2>로드맵</a></li> </ul> </li> <!-- PC방 제안 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/pcbang" data-astro-cid-3ef6ksr2>PC방 제안</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/overview" data-astro-cid-3ef6ksr2>위탁관리 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/xr7" data-astro-cid-3ef6ksr2>XR7 디바이스</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/rewards" data-astro-cid-3ef6ksr2>보상 구조</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/income-calculator" data-astro-cid-3ef6ksr2>수익 계산기</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/participation" data-astro-cid-3ef6ksr2>참여 방법</a></li> </ul> </li> <!-- 생태계 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/ecosystem" data-astro-cid-3ef6ksr2>생태계</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/structure" data-astro-cid-3ef6ksr2>구조 및 역할</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/token" data-astro-cid-3ef6ksr2>토큰 경제</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/workflow" data-astro-cid-3ef6ksr2>서비스 흐름도</a></li> </ul> </li> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/contact" data-astro-cid-3ef6ksr2>문의하기</a></li> </ul> </nav> <button class="mobile-toggle" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> </button> </div> </header>  <script type="module">document.addEventListener("DOMContentLoaded",function(){const i=document.querySelector(".mobile-toggle"),c=document.querySelector(".main-nav"),t=document.querySelectorAll(".nav-item.dropdown");i&&c&&i.addEventListener("click",function(){i.classList.toggle("active"),c.classList.toggle("active"),c.classList.contains("active")||t.forEach(e=>e.classList.remove("active"))}),t.forEach(e=>{e.querySelector("a").addEventListener("click",function(n){window.innerWidth<=768&&(n.preventDefault(),t.forEach(s=>{s!==e&&s.classList.remove("active")}),e.classList.toggle("active"))})}),window.addEventListener("resize",function(){window.innerWidth>768&&(c.classList.remove("active"),i.classList.remove("active"),t.forEach(e=>e.classList.remove("active")))}),window.addEventListener("scroll",function(){const e=document.querySelector(".site-header");window.scrollY>75?e.classList.add("scrolled"):e.classList.remove("scrolled")}),window.innerWidth<=768&&t.forEach(e=>{e.classList.add("mobile")})});</script>  <div class="container mx-auto px-4 py-12"> <div class="mb-12 text-center"> <h1 class="text-4xl font-bold mb-4">EdgeX 보상 구조</h1> <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+PC방의 유휴 GPU 자원 제공에 대한 투명하고 공정한 보상 시스템
+</p> </div> <div class="grid md:grid-cols-2 gap-12 mb-16 items-center"> <div> <h2 class="text-2xl font-semibold mb-4">블록체인 기반 투명한 보상</h2> <p class="mb-4">
+EdgeX는 PC방이 제공하는 컴퓨팅 자원에 대해 블록체인 기술을 활용한 투명하고 
+                    공정한 보상 시스템을 운영합니다. 모든 자원 제공 내역과 보상 기록은 블록체인에 
+                    안전하게 기록되어 언제든지 확인이 가능합니다.
+</p> <p class="mb-4">
+제공된 컴퓨팅 자원의 양과 품질에 따라 EdgeX 토큰(EXT)으로 보상이 지급되며,
+                    이는 실시간 시장 가치로 현금화하거나 다양한 서비스에 사용할 수 있습니다.
+</p> </div> <div class="bg-blue-50 p-6 rounded-lg"> <h3 class="text-xl font-semibold mb-4 text-center">보상 흐름도</h3> <div class="space-y-3"> <div class="bg-white p-4 rounded-lg shadow-sm flex items-center"> <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">1</div> <div> <h4 class="font-semibold">자원 제공</h4> <p class="text-sm">PC방의 유휴 GPU 자원이 EdgeX 네트워크에 제공됨</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-blue-300"></div> </div> <div class="bg-white p-4 rounded-lg shadow-sm flex items-center"> <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">2</div> <div> <h4 class="font-semibold">자원 측정</h4> <p class="text-sm">XR7 디바이스가 제공된 자원량을 정확히 측정</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-blue-300"></div> </div> <div class="bg-white p-4 rounded-lg shadow-sm flex items-center"> <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">3</div> <div> <h4 class="font-semibold">블록체인 기록</h4> <p class="text-sm">측정된 자원 제공량이 블록체인에 안전하게 기록</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-blue-300"></div> </div> <div class="bg-white p-4 rounded-lg shadow-sm flex items-center"> <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">4</div> <div> <h4 class="font-semibold">토큰 보상</h4> <p class="text-sm">스마트 계약을 통해 EdgeX 토큰(EXT)으로 자동 보상</p> </div> </div> <div class="flex justify-center"> <div class="h-6 w-0.5 bg-blue-300"></div> </div> <div class="bg-white p-4 rounded-lg shadow-sm flex items-center"> <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">5</div> <div> <h4 class="font-semibold">현금화/활용</h4> <p class="text-sm">토큰을 원화로 환전하거나 다양한 서비스에 활용</p> </div> </div> </div> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">보상 계산 방식</h2> <div class="grid md:grid-cols-2 gap-8"> <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500"> <h3 class="text-xl font-semibold mb-3">기본 보상 계산식</h3> <p class="mb-4">
+EdgeX의 보상은 다음 요소들을 고려하여 계산됩니다:
+</p> <div class="bg-gray-50 p-4 rounded-lg mb-4"> <p class="font-mono text-center">
+보상 = 자원량 × 시간 × 품질계수 × 기본요율
+</p> </div> <ul class="space-y-2"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">자원량:</span> <span> 제공된 GPU 연산력 (TFLOPS 기준)</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">시간:</span> <span> 자원이 제공된 시간 (시간 단위)</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">품질계수:</span> <span> 안정성, 네트워크 품질 등에 따른 계수</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">기본요율:</span> <span> 시간당 기준 보상 요율</span> </div> </li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500"> <h3 class="text-xl font-semibold mb-3">보너스 보상 요소</h3> <p class="mb-4">
+기본 보상 외에도 다음과 같은 보너스 요소가 적용됩니다:
+</p> <ul class="space-y-3"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">장기 참여 보너스:</span> <span> 연속 참여 기간에 따라 최대 20%의 추가 보상</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">고가용성 보너스:</span> <span> 월간 가용 시간이 높을수록 최대 15%의 추가 보상</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">네트워크 기여 보너스:</span> <span> 전체 네트워크 기여도에 따라 최대 10%의 추가 보상</span> </div> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <div> <span class="font-semibold">성능 품질 보너스:</span> <span> 고품질 자원 제공 시 최대 15%의 추가 보상</span> </div> </li> </ul> <p class="mt-4 text-sm text-gray-600">
+* 보너스 요소는 중첩 적용되어 기본 보상에 추가됩니다.
+</p> </div> </div> </div> <div class="mb-16 bg-gray-50 p-8 rounded-lg"> <h2 class="text-2xl font-semibold mb-6 text-center">PC 사양별 예상 보상</h2> <div class="overflow-x-auto mb-6"> <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md"> <thead> <tr class="bg-gray-100"> <th class="py-3 px-4 text-left border-b">GPU 모델</th> <th class="py-3 px-4 text-center border-b">연산력 (TFLOPS)</th> <th class="py-3 px-4 text-center border-b">시간당 보상 (EXT)</th> <th class="py-3 px-4 text-center border-b">일일 보상 (EXT)*</th> <th class="py-3 px-4 text-center border-b">월간 보상 (EXT)*</th> <th class="py-3 px-4 text-center border-b">월간 원화 환산**</th> </tr> </thead> <tbody> <tr> <td class="py-3 px-4 border-b font-semibold">NVIDIA RTX 4080</td> <td class="py-3 px-4 border-b text-center">48.7</td> <td class="py-3 px-4 border-b text-center">1.85</td> <td class="py-3 px-4 border-b text-center">14.8</td> <td class="py-3 px-4 border-b text-center">444</td> <td class="py-3 px-4 border-b text-center">133,200원</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">NVIDIA RTX 4070 Ti</td> <td class="py-3 px-4 border-b text-center">40.1</td> <td class="py-3 px-4 border-b text-center">1.52</td> <td class="py-3 px-4 border-b text-center">12.16</td> <td class="py-3 px-4 border-b text-center">364.8</td> <td class="py-3 px-4 border-b text-center">109,440원</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">NVIDIA RTX 4070</td> <td class="py-3 px-4 border-b text-center">29.1</td> <td class="py-3 px-4 border-b text-center">1.10</td> <td class="py-3 px-4 border-b text-center">8.8</td> <td class="py-3 px-4 border-b text-center">264</td> <td class="py-3 px-4 border-b text-center">79,200원</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">NVIDIA RTX 3080 Ti</td> <td class="py-3 px-4 border-b text-center">34.1</td> <td class="py-3 px-4 border-b text-center">1.29</td> <td class="py-3 px-4 border-b text-center">10.32</td> <td class="py-3 px-4 border-b text-center">309.6</td> <td class="py-3 px-4 border-b text-center">92,880원</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">NVIDIA RTX 3080</td> <td class="py-3 px-4 border-b text-center">29.8</td> <td class="py-3 px-4 border-b text-center">1.13</td> <td class="py-3 px-4 border-b text-center">9.04</td> <td class="py-3 px-4 border-b text-center">271.2</td> <td class="py-3 px-4 border-b text-center">81,360원</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">NVIDIA RTX 3070</td> <td class="py-3 px-4 border-b text-center">20.4</td> <td class="py-3 px-4 border-b text-center">0.77</td> <td class="py-3 px-4 border-b text-center">6.16</td> <td class="py-3 px-4 border-b text-center">184.8</td> <td class="py-3 px-4 border-b text-center">55,440원</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">AMD RX 6900 XT</td> <td class="py-3 px-4 border-b text-center">23.0</td> <td class="py-3 px-4 border-b text-center">0.87</td> <td class="py-3 px-4 border-b text-center">6.96</td> <td class="py-3 px-4 border-b text-center">208.8</td> <td class="py-3 px-4 border-b text-center">62,640원</td> </tr> <tr> <td class="py-3 px-4 border-b font-semibold">AMD RX 6800 XT</td> <td class="py-3 px-4 border-b text-center">20.7</td> <td class="py-3 px-4 border-b text-center">0.78</td> <td class="py-3 px-4 border-b text-center">6.24</td> <td class="py-3 px-4 border-b text-center">187.2</td> <td class="py-3 px-4 border-b text-center">56,160원</td> </tr> </tbody> </table> </div> <p class="text-sm text-gray-500 mb-4">
+* 일일 8시간, 월 30일 유휴 자원 제공 기준 (실제 자원 제공 시간에 따라 변동)
+</p> <p class="text-sm text-gray-500">
+** EXT 토큰 시장 가치 300원 기준 (시장 상황에 따라 변동될 수 있음)
+</p> <div class="mt-8 bg-blue-50 p-5 rounded-lg"> <h3 class="text-lg font-semibold mb-3">실제 PC방 보상 계산 예시</h3> <p class="mb-4">
+60대 규모의 PC방 중 평균 40%가 유휴 상태인 경우 (RTX 3080 기준):
+</p> <ul class="space-y-2"> <li class="flex items-start"> <span class="text-blue-600 mr-2">1.</span> <span>유휴 PC 수: 60대 × 40% = 24대</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">2.</span> <span>일일 유휴 시간: 평균 8시간/대</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">3.</span> <span>시간당 보상: 1.13 EXT × 24대 = 27.12 EXT</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">4.</span> <span>일일 보상: 27.12 EXT × 8시간 = 216.96 EXT</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">5.</span> <span>월간 보상: 216.96 EXT × 30일 = 6,508.8 EXT</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">6.</span> <span>원화 환산: 6,508.8 EXT × 300원 = 1,952,640원</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">7.</span> <span>추가 보너스 적용 시: 최대 약 2,400,000원/월</span> </li> </ul> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">EdgeX 토큰(EXT) 활용 방안</h2> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-blue-600 text-3xl mb-4">💱</div> <h3 class="text-xl font-semibold mb-3">현금화</h3> <p class="mb-3">
+EdgeX 토큰은 제휴 암호화폐 거래소를 통해 언제든지 원화 또는 다른 암호화폐로
+                        환전할 수 있습니다. 실시간 시장 가격으로 빠르고 쉽게 현금화가 가능합니다.
+</p> <ul class="text-sm space-y-1"> <li>• 국내외 주요 거래소 상장 예정 (2025 Q3)</li> <li>• 자동 원화 환전 서비스 제공</li> <li>• 정기 자동 환전 설정 가능</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-blue-600 text-3xl mb-4">🛒</div> <h3 class="text-xl font-semibold mb-3">서비스 이용</h3> <p class="mb-3">
+EdgeX 생태계 내에서 다양한 서비스와 제품 구매에 직접 사용할 수 있습니다.
+                        AI 서비스, 하드웨어 구매, PC방 관련 서비스 등에 활용 가능합니다.
+</p> <ul class="text-sm space-y-1"> <li>• EdgeX AI 서비스 이용</li> <li>• PC방 관련 서비스 및 제품 구매</li> <li>• 파트너사 제품 및 서비스 할인</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-blue-600 text-3xl mb-4">📈</div> <h3 class="text-xl font-semibold mb-3">스테이킹</h3> <p class="mb-3">
+EdgeX 토큰을 스테이킹하여 추가 수익을 창출할 수 있습니다.
+                        스테이킹 기간과 금액에 따라 연 10-20%의 추가 수익을 얻을 수 있습니다.
+</p> <ul class="text-sm space-y-1"> <li>• 3개월/6개월/12개월 스테이킹 옵션</li> <li>• 복리 이자 적용</li> <li>• 초기 스테이커 추가 보상</li> </ul> </div> </div> </div> <div class="mb-16 bg-gray-50 p-8 rounded-lg"> <h2 class="text-2xl font-semibold mb-6 text-center">보상 지급 및 정산 프로세스</h2> <div class="grid md:grid-cols-2 gap-8"> <div> <h3 class="text-xl font-semibold mb-4">일일 보상 계산</h3> <ul class="space-y-3"> <li class="flex items-start"> <span class="text-blue-600 mr-2">1.</span> <span>XR7 디바이스가 각 PC의 자원 제공량을 실시간으로 기록</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">2.</span> <span>매일 자정에 일일 자원 제공 기록 집계 및 블록체인에 기록</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">3.</span> <span>스마트 계약을 통해 일일 보상 자동 계산</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">4.</span> <span>EdgeX 대시보드에서 일일 보상 내역 확인 가능</span> </li> </ul> </div> <div> <h3 class="text-xl font-semibold mb-4">월간 정산 및 지급</h3> <ul class="space-y-3"> <li class="flex items-start"> <span class="text-blue-600 mr-2">1.</span> <span>매월 1일에 전월 보상 내역 정산 및 최종 확정</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">2.</span> <span>보너스 요소 적용 및 최종 보상 금액 계산</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">3.</span> <span>확정된 보상은 EdgeX 지갑으로 자동 지급 (매월 5일)</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">4.</span> <span>자동 원화 환전 설정 시 지정된 은행 계좌로 자동 송금</span> </li> </ul> </div> </div> <div class="mt-8 bg-blue-100 p-5 rounded-lg"> <h3 class="text-lg font-semibold mb-3">정산 보고서</h3> <p class="mb-3">
+매월 상세한 정산 보고서가 제공되며, 다음 정보를 확인할 수 있습니다:
+</p> <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>일별 자원 제공량 및 보상 내역</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>적용된 보너스 항목 및 금액</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>PC별 성능 및 기여도 분석</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>월간 토큰 시세 변동 정보</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>잠재적 최적화 제안 사항</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>전월 대비 성과 비교</span> </li> </ul> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">자주 묻는 질문</h2> <div class="space-y-4"> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">EdgeX 토큰의 가치는 어떻게 결정되나요?</h3> <p>EdgeX 토큰의 가치는 시장 수요와 공급에 의해 결정됩니다. 분산형 AI 서비스의 증가와 함께 토큰 수요가 증가할 것으로 예상되며, 제한된 토큰 발행량으로 가치 안정성을 유지합니다. 또한 주요 암호화폐 거래소에 상장되어 시장 가치가 투명하게 형성됩니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">보상을 현금으로 직접 받을 수 있나요?</h3> <p>네, 가능합니다. EdgeX는 자동 원화 환전 서비스를 제공하여 월간 정산 시 토큰을 자동으로 원화로 환전하여 지정된 은행 계좌로 입금해 드립니다. 이 서비스를 이용하면 암호화폐 거래소 계정이 없어도 편리하게 현금으로 보상을 받을 수 있습니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">보상 금액이 시간에 따라 변동되나요?</h3> <p>기본적인 보상 계산 방식은 고정되어 있지만, 두 가지 요소에 의해 변동될 수 있습니다. 첫째, EdgeX 토큰의 시장 가치 변동에 따라 원화 환산 금액이 달라질 수 있습니다. 둘째, 네트워크 수요가 높은 시간대에는 보상률이 최대 30% 증가하는 동적 보상 시스템이 적용됩니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">보상에 대한 세금은 어떻게 처리해야 하나요?</h3> <p>암호화폐 수익에 대한 세금은 현행 법규에 따라 처리해야 합니다. EdgeX는 월간 정산 보고서를 통해 세금 신고에 필요한 정보를 제공해 드립니다. 사업자의 경우 기타소득이나 사업소득으로 신고할 수 있으며, 정확한 세금 처리 방법은 세무 전문가와 상담하시기를 권장합니다.</p> </div> <div class="bg-white p-6 rounded-lg shadow-sm"> <h3 class="text-lg font-semibold mb-2">최소 보상 기준이 있나요?</h3> <p>네, 원활한 정산 처리를 위해 월간 최소 보상 기준인 50 EXT(약 15,000원)를 적용하고 있습니다. 월간 보상이 이 금액 미만인 경우, 다음 달로 이월되어 합산됩니다. 이월된 보상은 최소 기준을 충족할 때까지 계속 누적되며 소멸되지 않습니다.</p> </div> </div> </div> <div class="text-center"> <h2 class="text-2xl font-semibold mb-6">보상 시뮬레이션으로 수익을 예측해 보세요</h2> <p class="mb-8 max-w-2xl mx-auto">
+귀하의 PC방 규모와 사양에 맞는 예상 수익을 계산해 드립니다.
+                무료 상담을 통해 맞춤형 수익 시뮬레이션을 받아보세요.
+</p> <div class="flex flex-col sm:flex-row gap-4 justify-center"> <a href="/pcbang/participation" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition">
+PC방 참여 방법 알아보기
+</a> <a href="/contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+수익 시뮬레이션 요청하기 →
+</a> </div> </div> </div>  <!-- 모바일 하단 네비게이션 --> <nav class="bottom-nav"> <ul class="nav-list"> <li class="nav-item"> <a href="#intro" class="nav-link active"> <i class="fas fa-info-circle"></i> <span>소개</span> </a> </li> <li class="nav-item"> <a href="#benefits" class="nav-link"> <i class="fas fa-chart-line"></i> <span>효과</span> </a> </li> <li class="nav-item"> <a href="#infra" class="nav-link"> <i class="fas fa-server"></i> <span>인프라</span> </a> </li> <li class="nav-item"> <a href="#rewards" class="nav-link"> <i class="fas fa-coins"></i> <span>보상</span> </a> </li> </ul> </nav> <script>
+    // 스크롤 시 섹션 애니메이션
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      
+      // 초기 로드 시 화면에 보이는 섹션들 표시
+      sections.forEach(section => {
+        if (isElementInViewport(section)) {
+          section.classList.add('animate-on-scroll');
+        }
+      });
+      
+      // 스크롤 이벤트 - 디바운스 처리 추가
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+          window.cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = window.requestAnimationFrame(function() {
+          sections.forEach(section => {
+            if (isElementInViewport(section) && !section.classList.contains('animate-on-scroll')) {
+              section.classList.add('animate-on-scroll');
+            }
+          });
+          
+          // 모바일 네비게이션 활성화 상태 업데이트
+          updateActiveNavLink();
+        });
+      });
+      
+      // 모바일 네비게이션 링크 클릭 이벤트
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // 첫 로드시 활성화 상태 설정
+      updateActiveNavLink();
+    });
+    
+    // 요소가 뷰포트에 있는지 확인하는 함수
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+      );
+    }
+    
+    // 현재 보이는 섹션에 따라 네비게이션 활성화 상태 업데이트
+    function updateActiveNavLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSectionId = '';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+          currentSectionId = section.id;
+        }
+      });
+      
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }
+  </script> <footer data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-logo" data-astro-cid-sz7xmlte> <div class="logo-wrapper" data-astro-cid-sz7xmlte> <span class="logo-text" data-astro-cid-sz7xmlte>EdgeX</span> </div> <p class="tagline" data-astro-cid-sz7xmlte>분산형 AI 인프라를 구축하는 Web3 기반 엣지 컴퓨팅 솔루션</p> </div> <div class="footer-links" data-astro-cid-sz7xmlte> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>프로젝트 정보</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/EdgeX/about" data-astro-cid-sz7xmlte>EdgeX 소개</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/overview" data-astro-cid-sz7xmlte>도입 효과</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/rewards" data-astro-cid-sz7xmlte>보상 구조</a></li> </ul> </div> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>소셜 미디어</h4> <div class="social-icons" data-astro-cid-sz7xmlte> <a href="https://github.com/yourusername/EdgeX" target="_blank" aria-label="GitHub" data-astro-cid-sz7xmlte> <i class="fab fa-github" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Discord" data-astro-cid-sz7xmlte> <i class="fab fa-discord" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Twitter" data-astro-cid-sz7xmlte> <i class="fab fa-twitter" data-astro-cid-sz7xmlte></i> </a> </div> </div> </div> </div> <div class="footer-bottom" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy; 2025 EdgeX Project. 모든 권리 보유.</p> <p data-astro-cid-sz7xmlte>문의: <a href="mailto:info@edgex.io" data-astro-cid-sz7xmlte>info@edgex.io</a></p> </div> </div> </footer>  </body></html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="EdgeX는 분산형 AI 인프라를 구축하는 Web3 기반의 엣지 컴퓨팅 프로젝트입니다. PC방을 위한 도입 제안서입니다."><meta name="keywords" content="EdgeX, Web3, 엣지 컴퓨팅, AI 인프라, PC방, 분산형"><title>생태계 구조 및 역할 | EdgeX</title><!-- 폰트 최적화: preconnect와 preload 사용 --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" media="print" onload="this.media='all'"><!-- 아이콘 폰트 지연 로드 --><link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'"><!-- 폰트가 로드되지 않았을 때를 위한 대체 스타일 --><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"><script>
+    // Base URL 전역 변수 설정
+    window.BASE_URL = '${import.meta.env.BASE_URL}';
+    console.log("BASE_URL는:", window.BASE_URL);
+    
+    // 경로 생성 유틸리티 함수
+    window.getPath = function(path) {
+      // 경로가 슬래시로 시작하는지 확인하고 없으면 추가
+      const formattedPath = path.startsWith('/') ? path : `/${path}`;
+      return window.BASE_URL + formattedPath;
+    };
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOM이 로드되었습니다");
+    });
+  </script><link rel="stylesheet" href="/EdgeX/_assets/index.X5qw8zEV.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container" data-astro-cid-3ef6ksr2> <div class="logo" data-astro-cid-3ef6ksr2> <a href="/EdgeX/" data-astro-cid-3ef6ksr2> <span class="logo-text" data-astro-cid-3ef6ksr2>EdgeX</span> <img src="/EdgeX/image/EdgeX-logo.png" alt="EdgeX Logo" class="logo-image" data-astro-cid-3ef6ksr2> <span class="logo-badge" data-astro-cid-3ef6ksr2>피씨방</span> </a> </div> <nav class="main-nav" data-astro-cid-3ef6ksr2> <ul class="nav-list" data-astro-cid-3ef6ksr2> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/" data-astro-cid-3ef6ksr2>홈</a></li> <!-- 소개 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/about" data-astro-cid-3ef6ksr2>EdgeX 소개</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/overview" data-astro-cid-3ef6ksr2>프로젝트 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/innovation" data-astro-cid-3ef6ksr2>AI 인프라 혁신</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/comparison" data-astro-cid-3ef6ksr2>경쟁사 비교</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/about/roadmap" data-astro-cid-3ef6ksr2>로드맵</a></li> </ul> </li> <!-- PC방 제안 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/pcbang" data-astro-cid-3ef6ksr2>PC방 제안</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/overview" data-astro-cid-3ef6ksr2>위탁관리 개요</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/xr7" data-astro-cid-3ef6ksr2>XR7 디바이스</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/rewards" data-astro-cid-3ef6ksr2>보상 구조</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/income-calculator" data-astro-cid-3ef6ksr2>수익 계산기</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/pcbang/participation" data-astro-cid-3ef6ksr2>참여 방법</a></li> </ul> </li> <!-- 생태계 드롭다운 --> <li class="nav-item dropdown" data-astro-cid-3ef6ksr2> <a href="/EdgeX/ecosystem" data-astro-cid-3ef6ksr2>생태계</a> <ul class="dropdown-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/structure" data-astro-cid-3ef6ksr2>구조 및 역할</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/token" data-astro-cid-3ef6ksr2>토큰 경제</a></li> <li data-astro-cid-3ef6ksr2><a href="/EdgeX/ecosystem/workflow" data-astro-cid-3ef6ksr2>서비스 흐름도</a></li> </ul> </li> <li class="nav-item" data-astro-cid-3ef6ksr2><a href="/EdgeX/contact" data-astro-cid-3ef6ksr2>문의하기</a></li> </ul> </nav> <button class="mobile-toggle" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> </button> </div> </header>  <script type="module">document.addEventListener("DOMContentLoaded",function(){const i=document.querySelector(".mobile-toggle"),c=document.querySelector(".main-nav"),t=document.querySelectorAll(".nav-item.dropdown");i&&c&&i.addEventListener("click",function(){i.classList.toggle("active"),c.classList.toggle("active"),c.classList.contains("active")||t.forEach(e=>e.classList.remove("active"))}),t.forEach(e=>{e.querySelector("a").addEventListener("click",function(n){window.innerWidth<=768&&(n.preventDefault(),t.forEach(s=>{s!==e&&s.classList.remove("active")}),e.classList.toggle("active"))})}),window.addEventListener("resize",function(){window.innerWidth>768&&(c.classList.remove("active"),i.classList.remove("active"),t.forEach(e=>e.classList.remove("active")))}),window.addEventListener("scroll",function(){const e=document.querySelector(".site-header");window.scrollY>75?e.classList.add("scrolled"):e.classList.remove("scrolled")}),window.innerWidth<=768&&t.forEach(e=>{e.classList.add("mobile")})});</script>  <div class="container mx-auto px-4 py-12"> <div class="mb-12 text-center"> <h1 class="text-4xl font-bold mb-4">EdgeX 생태계 구조 및 역할</h1> <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+PC방, 개발자, 사용자가 함께 참여하는 분산형 AI 인프라 생태계
+</p> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">생태계 참여자</h2> <div class="grid md:grid-cols-3 gap-8"> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-500"> <div class="text-blue-600 text-4xl mb-4">🖥️</div> <h3 class="text-xl font-semibold mb-3">PC방</h3> <p class="mb-4">
+유휴 GPU 자원을 EdgeX 네트워크에 제공하여 수익을 창출하는 인프라 제공자입니다.
+                        XR7 디바이스를 통해 안전하게 연결되며, 기존 영업에 영향 없이 추가 수익을 얻습니다.
+</p> <h4 class="font-semibold mb-2">주요 역할:</h4> <ul class="space-y-1 text-sm"> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>고성능 GPU 컴퓨팅 자원 제공</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>XR7 디바이스 호스팅 및 운영</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>네트워크 인프라 지원</span> </li> <li class="flex items-start"> <span class="text-blue-600 mr-2">•</span> <span>EdgeX 토큰 생태계 참여</span> </li> </ul> <div class="mt-4 bg-blue-50 p-3 rounded"> <p class="text-sm"> <span class="font-semibold">핵심 가치:</span> 추가 수익 창출 및 자원 최적화
+</p> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500"> <div class="text-green-600 text-4xl mb-4">👩‍💻</div> <h3 class="text-xl font-semibold mb-3">개발자</h3> <p class="mb-4">
+EdgeX 플랫폼을 활용하여 AI 서비스와 애플리케이션을 개발하고 배포하는 창작자입니다.
+                        저비용 고성능 인프라를 활용해 혁신적인 AI 서비스를 제공합니다.
+</p> <h4 class="font-semibold mb-2">주요 역할:</h4> <ul class="space-y-1 text-sm"> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>AI 모델 및 서비스 개발</span> </li> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>EdgeX SDK 및 API 활용</span> </li> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>서비스 최적화 및 배포</span> </li> <li class="flex items-start"> <span class="text-green-600 mr-2">•</span> <span>사용료 수익 창출</span> </li> </ul> <div class="mt-4 bg-green-50 p-3 rounded"> <p class="text-sm"> <span class="font-semibold">핵심 가치:</span> 저비용 인프라 접근성 및 혁신 기회
+</p> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500"> <div class="text-purple-600 text-4xl mb-4">👥</div> <h3 class="text-xl font-semibold mb-3">사용자</h3> <p class="mb-4">
+EdgeX에서 제공되는 다양한 AI 서비스를 이용하고 혜택을 누리는 최종 소비자입니다.
+                        저렴한 비용으로 고품질 AI 서비스를 이용할 수 있습니다.
+</p> <h4 class="font-semibold mb-2">주요 역할:</h4> <ul class="space-y-1 text-sm"> <li class="flex items-start"> <span class="text-purple-600 mr-2">•</span> <span>AI 서비스 및 애플리케이션 이용</span> </li> <li class="flex items-start"> <span class="text-purple-600 mr-2">•</span> <span>서비스 이용료 지불(토큰)</span> </li> <li class="flex items-start"> <span class="text-purple-600 mr-2">•</span> <span>피드백 및 개선 제안</span> </li> <li class="flex items-start"> <span class="text-purple-600 mr-2">•</span> <span>생태계 확장 기여</span> </li> </ul> <div class="mt-4 bg-purple-50 p-3 rounded"> <p class="text-sm"> <span class="font-semibold">핵심 가치:</span> 경제적이고 접근성 높은 AI 서비스
+</p> </div> </div> </div> </div> <div class="mb-16 bg-gray-50 p-8 rounded-lg"> <h2 class="text-2xl font-semibold mb-6 text-center">생태계 구조도</h2> <div class="relative mb-8"> <!-- 중앙 EdgeX 플랫폼 --> <div class="mx-auto w-64 bg-blue-600 text-white p-4 rounded-lg text-center mb-6"> <h3 class="text-lg font-semibold">EdgeX 플랫폼</h3> <p class="text-sm">분산형 엣지 컴퓨팅 인프라</p> </div> <!-- 생태계 참여자 그룹 --> <div class="grid md:grid-cols-3 gap-6"> <!-- PC방 그룹 --> <div> <div class="bg-blue-100 p-3 rounded-lg text-center mb-3"> <h4 class="font-semibold">PC방 네트워크</h4> </div> <div class="space-y-2"> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-blue-500"> <p class="font-semibold">자원 제공</p> <p class="text-sm">GPU 컴퓨팅 자원</p> </div> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-blue-500"> <p class="font-semibold">XR7 디바이스</p> <p class="text-sm">자원 관리 및 연결</p> </div> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-blue-500"> <p class="font-semibold">토큰 보상</p> <p class="text-sm">자원 제공에 대한 대가</p> </div> </div> </div> <!-- 개발자 그룹 --> <div> <div class="bg-green-100 p-3 rounded-lg text-center mb-3"> <h4 class="font-semibold">개발자 생태계</h4> </div> <div class="space-y-2"> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-green-500"> <p class="font-semibold">개발 환경</p> <p class="text-sm">SDK 및 API</p> </div> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-green-500"> <p class="font-semibold">AI 서비스 배포</p> <p class="text-sm">모델 훈련 및 추론</p> </div> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-green-500"> <p class="font-semibold">수익 창출</p> <p class="text-sm">서비스 이용료 수익</p> </div> </div> </div> <!-- 사용자 그룹 --> <div> <div class="bg-purple-100 p-3 rounded-lg text-center mb-3"> <h4 class="font-semibold">서비스 사용자</h4> </div> <div class="space-y-2"> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-purple-500"> <p class="font-semibold">서비스 이용</p> <p class="text-sm">AI 애플리케이션 접근</p> </div> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-purple-500"> <p class="font-semibold">토큰 사용</p> <p class="text-sm">서비스 결제 수단</p> </div> <div class="bg-white p-3 rounded shadow-sm border-l-4 border-purple-500"> <p class="font-semibold">피드백 제공</p> <p class="text-sm">서비스 품질 개선</p> </div> </div> </div> </div> <!-- 가치 흐름도 --> <div class="mt-8 bg-white p-6 rounded-lg shadow-md"> <h4 class="font-semibold mb-4 text-center">생태계 가치 흐름</h4> <div class="grid grid-cols-3 gap-4"> <div class="text-center"> <div class="bg-blue-100 p-2 rounded mb-2">PC방</div> <div class="text-sm">컴퓨팅 자원 제공</div> <div class="text-blue-600 text-xl my-1">↓</div> <div class="text-sm">토큰 보상 획득</div> </div> <div class="text-center"> <div class="bg-green-100 p-2 rounded mb-2">개발자</div> <div class="text-sm">AI 서비스 개발/배포</div> <div class="text-green-600 text-xl my-1">↓</div> <div class="text-sm">이용료 수익 창출</div> </div> <div class="text-center"> <div class="bg-purple-100 p-2 rounded mb-2">사용자</div> <div class="text-sm">토큰으로 서비스 결제</div> <div class="text-purple-600 text-xl my-1">↓</div> <div class="text-sm">고품질 AI 서비스 이용</div> </div> </div> <div class="text-center mt-4"> <div class="text-sm text-gray-500">모든 참여자가 기여하고 혜택을 받는 선순환 구조</div> </div> </div> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">기술적 구조</h2> <div class="grid md:grid-cols-2 gap-8"> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-4">인프라 레이어</h3> <div class="space-y-3"> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">XR7 디바이스 네트워크</h4> <p class="text-sm mt-1">
+PC방에 설치된 XR7 디바이스는 분산형 엣지 노드를 형성하며, 각 노드는
+                                지리적으로 분산된 컴퓨팅 자원을 안전하게 연결합니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">자원 관리 시스템</h4> <p class="text-sm mt-1">
+PC의 유휴 상태를 감지하고, GPU 자원을 최적으로 할당하는 지능형
+                                자원 관리 시스템이 각 XR7 디바이스에 탑재되어 있습니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">보안 네트워크</h4> <p class="text-sm mt-1">
+모든 데이터와 워크로드는 고급 암호화로 보호되며, PC방의 일반
+                                네트워크와 완전히 분리된 보안 채널을 통해 전송됩니다.
+</p> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-4">서비스 레이어</h3> <div class="space-y-3"> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">AI 연산 플랫폼</h4> <p class="text-sm mt-1">
+분산형 인프라에서 AI 모델 학습 및 추론을 효율적으로 수행하는
+                                최적화된 연산 환경을 제공합니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">개발자 SDK 및 API</h4> <p class="text-sm mt-1">
+개발자들이 쉽게 AI 서비스를 개발하고 배포할 수 있는 도구와
+                                인터페이스를 제공합니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">서비스 마켓플레이스</h4> <p class="text-sm mt-1">
+개발자가 만든 AI 서비스를 사용자에게 제공하고 수익을 창출할 수 있는
+                                통합 마켓플레이스입니다.
+</p> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-4">블록체인 레이어</h3> <div class="space-y-3"> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">토큰 이코노미</h4> <p class="text-sm mt-1">
+EdgeX 토큰(EXT)은 생태계 내에서 가치 교환의 매개체 역할을 하며,
+                                자원 제공, 서비스 이용, 보상 등에 활용됩니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">스마트 계약</h4> <p class="text-sm mt-1">
+자원 제공량 측정, 보상 계산, 서비스 이용료 처리 등을 자동화하는
+                                투명한 스마트 계약 시스템을 제공합니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">투명한 기록 시스템</h4> <p class="text-sm mt-1">
+모든 자원 제공 및 이용 내역, 보상 지급 등이 블록체인에 안전하게
+                                기록되어 투명성과 신뢰성을 보장합니다.
+</p> </div> </div> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-4">관리 및 거버넌스</h3> <div class="space-y-3"> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">EdgeX 재단</h4> <p class="text-sm mt-1">
+생태계 전반의 개발과 관리를 주도하는 비영리 재단으로, 핵심 기술 개발과
+                                프로토콜 업데이트를 담당합니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">커뮤니티 거버넌스</h4> <p class="text-sm mt-1">
+토큰 보유자 투표를 통한 주요 의사결정 및 프로토콜 업그레이드 제안을
+                                결정하는 분산형 거버넌스 구조를 갖추고 있습니다.
+</p> </div> <div class="bg-gray-50 p-3 rounded"> <h4 class="font-semibold">성장 인센티브</h4> <p class="text-sm mt-1">
+생태계의 성장과 발전을 위한 다양한 인센티브 프로그램을 운영하여
+                                참여자의 지속적인 기여를 장려합니다.
+</p> </div> </div> </div> </div> </div> <div class="mb-16 bg-gray-50 p-8 rounded-lg"> <h2 class="text-2xl font-semibold mb-6 text-center">EdgeX의 차별화된 생태계 장점</h2> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-blue-600 text-3xl mb-4">⚡</div> <h3 class="text-xl font-semibold mb-3">분산형 구조</h3> <p class="mb-3">
+중앙화된 데이터센터가 아닌 지역적으로 분산된 엣지 노드를 활용하여
+                        더 빠른 응답 속도와 안정적인 서비스를 제공합니다.
+</p> <ul class="text-sm space-y-1"> <li>• 단일 장애점 제거</li> <li>• 지연 시간 최소화</li> <li>• 지역별 최적화 가능</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-blue-600 text-3xl mb-4">💸</div> <h3 class="text-xl font-semibold mb-3">경제적 효율성</h3> <p class="mb-3">
+기존 유휴 자원을 활용함으로써 인프라 비용을 대폭 절감하고,
+                        모든 참여자에게 경제적 혜택을 제공합니다.
+</p> <ul class="text-sm space-y-1"> <li>• 저비용 AI 인프라</li> <li>• PC방 추가 수익 창출</li> <li>• 개발자 진입 장벽 낮춤</li> </ul> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <div class="text-blue-600 text-3xl mb-4">🔄</div> <h3 class="text-xl font-semibold mb-3">지속가능한 순환</h3> <p class="mb-3">
+블록체인 기반의 투명한 토큰 이코노미를 통해 모든 참여자가
+                        기여하고 혜택을 받는 지속가능한 생태계를 구축합니다.
+</p> <ul class="text-sm space-y-1"> <li>• 투명한 보상 시스템</li> <li>• 자동화된 가치 교환</li> <li>• 장기적 성장 모델</li> </ul> </div> </div> <div class="mt-8 bg-blue-50 p-5 rounded-lg"> <h3 class="text-lg font-semibold mb-3 text-center">생태계 성장 전략</h3> <div class="grid md:grid-cols-2 gap-x-8 gap-y-4"> <div class="flex items-start"> <span class="text-blue-600 mr-2">1.</span> <div> <span class="font-semibold">초기 인센티브 프로그램</span> <p class="text-sm mt-1">
+초기 참여자에게 추가 보상을 제공하여 네트워크 성장을 가속화합니다.
+</p> </div> </div> <div class="flex items-start"> <span class="text-blue-600 mr-2">2.</span> <div> <span class="font-semibold">개발자 생태계 육성</span> <p class="text-sm mt-1">
+개발자 지원 프로그램, 해커톤, 교육 자료 등을 통해 개발자 참여를 촉진합니다.
+</p> </div> </div> <div class="flex items-start"> <span class="text-blue-600 mr-2">3.</span> <div> <span class="font-semibold">전략적 파트너십</span> <p class="text-sm mt-1">
+PC방 체인, AI 기업, 클라우드 서비스 제공업체 등과의 전략적 협력을 추진합니다.
+</p> </div> </div> <div class="flex items-start"> <span class="text-blue-600 mr-2">4.</span> <div> <span class="font-semibold">글로벌 확장</span> <p class="text-sm mt-1">
+국내 시장 안정화 후 아시아, 북미, 유럽 등으로 단계적 확장을 계획합니다.
+</p> </div> </div> </div> </div> </div> <div class="mb-16"> <h2 class="text-2xl font-semibold mb-6 text-center">EdgeX 생태계 참여 방법</h2> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-3">PC방 참여</h3> <p class="mb-4">
+유휴 GPU 자원을 제공하고 토큰 보상을 받으세요. XR7 디바이스를 통해
+                        EdgeX 네트워크에 안전하게 연결됩니다.
+</p> <a href="/pcbang/participation" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+PC방 참여 방법 →
+</a> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-3">개발자 참여</h3> <p class="mb-4">
+EdgeX SDK와 API를 활용하여 혁신적인 AI 서비스를 개발하고 
+                        저비용 고성능 인프라에서 서비스를 배포하세요.
+</p> <a href="/ecosystem/token" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+개발자 프로그램 →
+</a> </div> <div class="bg-white p-6 rounded-lg shadow-md"> <h3 class="text-xl font-semibold mb-3">사용자 참여</h3> <p class="mb-4">
+EdgeX 토큰으로 다양한 AI 서비스를 이용하고, 생태계 거버넌스에
+                        참여하여 프로젝트의 미래 방향을 함께 결정하세요.
+</p> <a href="/ecosystem/workflow" class="inline-block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+서비스 이용 방법 →
+</a> </div> </div> </div> <div class="mt-12 text-center flex justify-between"> <a href="/about/roadmap" class="inline-block bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition">
+← 프로젝트 로드맵
+</a> <a href="/ecosystem/token" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+토큰 경제 →
+</a> </div> </div>  <!-- 모바일 하단 네비게이션 --> <nav class="bottom-nav"> <ul class="nav-list"> <li class="nav-item"> <a href="#intro" class="nav-link active"> <i class="fas fa-info-circle"></i> <span>소개</span> </a> </li> <li class="nav-item"> <a href="#benefits" class="nav-link"> <i class="fas fa-chart-line"></i> <span>효과</span> </a> </li> <li class="nav-item"> <a href="#infra" class="nav-link"> <i class="fas fa-server"></i> <span>인프라</span> </a> </li> <li class="nav-item"> <a href="#rewards" class="nav-link"> <i class="fas fa-coins"></i> <span>보상</span> </a> </li> </ul> </nav> <script>
+    // 스크롤 시 섹션 애니메이션
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      
+      // 초기 로드 시 화면에 보이는 섹션들 표시
+      sections.forEach(section => {
+        if (isElementInViewport(section)) {
+          section.classList.add('animate-on-scroll');
+        }
+      });
+      
+      // 스크롤 이벤트 - 디바운스 처리 추가
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+          window.cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = window.requestAnimationFrame(function() {
+          sections.forEach(section => {
+            if (isElementInViewport(section) && !section.classList.contains('animate-on-scroll')) {
+              section.classList.add('animate-on-scroll');
+            }
+          });
+          
+          // 모바일 네비게이션 활성화 상태 업데이트
+          updateActiveNavLink();
+        });
+      });
+      
+      // 모바일 네비게이션 링크 클릭 이벤트
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // 첫 로드시 활성화 상태 설정
+      updateActiveNavLink();
+    });
+    
+    // 요소가 뷰포트에 있는지 확인하는 함수
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+      );
+    }
+    
+    // 현재 보이는 섹션에 따라 네비게이션 활성화 상태 업데이트
+    function updateActiveNavLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSectionId = '';
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+          currentSectionId = section.id;
+        }
+      });
+      
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }
+  </script> <footer data-astro-cid-sz7xmlte> <div class="container" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-logo" data-astro-cid-sz7xmlte> <div class="logo-wrapper" data-astro-cid-sz7xmlte> <span class="logo-text" data-astro-cid-sz7xmlte>EdgeX</span> </div> <p class="tagline" data-astro-cid-sz7xmlte>분산형 AI 인프라를 구축하는 Web3 기반 엣지 컴퓨팅 솔루션</p> </div> <div class="footer-links" data-astro-cid-sz7xmlte> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>프로젝트 정보</h4> <ul data-astro-cid-sz7xmlte> <li data-astro-cid-sz7xmlte><a href="/EdgeX/about" data-astro-cid-sz7xmlte>EdgeX 소개</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/overview" data-astro-cid-sz7xmlte>도입 효과</a></li> <li data-astro-cid-sz7xmlte><a href="/EdgeX/pcbang/rewards" data-astro-cid-sz7xmlte>보상 구조</a></li> </ul> </div> <div class="footer-section" data-astro-cid-sz7xmlte> <h4 data-astro-cid-sz7xmlte>소셜 미디어</h4> <div class="social-icons" data-astro-cid-sz7xmlte> <a href="https://github.com/yourusername/EdgeX" target="_blank" aria-label="GitHub" data-astro-cid-sz7xmlte> <i class="fab fa-github" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Discord" data-astro-cid-sz7xmlte> <i class="fab fa-discord" data-astro-cid-sz7xmlte></i> </a> <a href="#" target="_blank" aria-label="Twitter" data-astro-cid-sz7xmlte> <i class="fab fa-twitter" data-astro-cid-sz7xmlte></i> </a> </div> </div> </div> </div> <div class="footer-bottom" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>&copy; 2025 EdgeX Project. 모든 권리 보유.</p> <p data-astro-cid-sz7xmlte>문의: <a href="mailto:info@edgex.io" data-astro-cid-sz7xmlte>info@edgex.io</a></p> </div> </div> </footer>  </body></html>

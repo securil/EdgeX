@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- 배경 -->
+  <rect width="800" height="600" fill="#050a1f"/>
+  
+  <!-- 클라우드 -->
+  <g transform="translate(400, 150)" fill="#0055ff" opacity="0.8">
+    <circle cx="-120" cy="0" r="60"/>
+    <circle cx="-50" cy="-20" r="70"/>
+    <circle cx="50" cy="-10" r="75"/>
+    <circle cx="120" cy="20" r="55"/>
+    <rect x="-150" y="0" width="300" height="60" rx="20"/>
+  </g>
+  
+  <!-- 연결선 -->
+  <g stroke="#00b2ff" stroke-width="5" stroke-dasharray="15 10" fill="none">
+    <path d="M400,210 L200,350" />
+    <path d="M400,210 L300,400" />
+    <path d="M400,210 L500,380" />
+    <path d="M400,210 L600,350" />
+  </g>
+  
+  <!-- 엣지 디바이스 - 좌상단 -->
+  <g transform="translate(200,350)">
+    <rect x="-40" y="-40" width="80" height="80" rx="10" fill="#0c1631" stroke="#00b2ff" stroke-width="3"/>
+    <circle cx="0" cy="0" r="25" fill="#00b2ff"/>
+    <text x="0" y="-65" text-anchor="middle" fill="white" font-family="Arial" font-size="20">Edge Device</text>
+  </g>
+  
+  <!-- 엣지 디바이스 - 중앙 -->
+  <g transform="translate(300,400)">
+    <rect x="-40" y="-40" width="80" height="80" rx="10" fill="#0c1631" stroke="#00b2ff" stroke-width="3"/>
+    <circle cx="0" cy="0" r="25" fill="#00b2ff"/>
+    <text x="0" y="-65" text-anchor="middle" fill="white" font-family="Arial" font-size="20">Edge Device</text>
+  </g>
+  
+  <!-- 엣지 디바이스 - 중앙우측 -->
+  <g transform="translate(500,380)">
+    <rect x="-40" y="-40" width="80" height="80" rx="10" fill="#0c1631" stroke="#00b2ff" stroke-width="3"/>
+    <circle cx="0" cy="0" r="25" fill="#00b2ff"/>
+    <text x="0" y="-65" text-anchor="middle" fill="white" font-family="Arial" font-size="20">Edge Device</text>
+  </g>
+  
+  <!-- 엣지 디바이스 - 우측 -->
+  <g transform="translate(600,350)">
+    <rect x="-40" y="-40" width="80" height="80" rx="10" fill="#0c1631" stroke="#00b2ff" stroke-width="3"/>
+    <circle cx="0" cy="0" r="25" fill="#00b2ff"/>
+    <text x="0" y="-65" text-anchor="middle" fill="white" font-family="Arial" font-size="20">Edge Device</text>
+  </g>
+  
+  <!-- 클라우드 텍스트 -->
+  <text x="400" y="80" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="bold">Cloud</text>
+  
+  <!-- EdgeX 텍스트 -->
+  <text x="400" y="520" text-anchor="middle" fill="#0055ff" font-family="Arial" font-size="32" font-weight="bold">EdgeX 분산형 컴퓨팅</text>
+</svg>
